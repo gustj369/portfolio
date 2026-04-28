@@ -55,7 +55,7 @@ export default function TechStack() {
             CURRENTLY EXPLORING
           </p>
           <div className="flex flex-wrap gap-2">
-            {["Next.js", "TypeScript", "Supabase", "LangChain", "Figma"].map(
+            {["Figma"].map(
               (item) => (
                 <span
                   key={item}

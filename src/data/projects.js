@@ -55,11 +55,11 @@ export const projects = [
 export const techStack = [
   {
     category: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "React"],
+    items: ["HTML", "CSS", "JavaScript", "Python"],
   },
   {
     category: "Tools",
-    items: ["GitHub", "Codex", "ChatGPT", "Cursor"],
+    items: ["GitHub", "Codex", "ChatGPT", "VBA"],
   },
   {
     category: "Content",
