@@ -3,7 +3,7 @@ import { writingTopics } from "../data/projects";
 const stats = [
   {
     value: "9 MONTHS",
-    label: "꾸준한 기록",
+    label: "퇴근 후에도 이어온 기록",
     color: "gold",
   },
   {
@@ -23,10 +23,10 @@ function WritingCard({ topic }) {
   const isViolet = topic.accent === "violet";
 
   const cardClass = isGold
-    ? "border-gold-500/30 bg-dark-800/60"
+    ? "border-gold-500/30 bg-dark-800/60 hover:border-gold-500/45"
     : isViolet
-    ? "border-violet-500/30 bg-dark-800/60"
-    : "border-dark-500/50 bg-dark-800/40";
+    ? "border-violet-500/30 bg-dark-800/60 hover:border-violet-500/45"
+    : "border-dark-500/50 bg-dark-800/40 hover:border-dark-400/70";
 
   const iconClass = isGold
     ? "text-gold-400 bg-gold-500/10"
@@ -42,7 +42,7 @@ function WritingCard({ topic }) {
 
   return (
     <div
-      className={`rounded-xl p-5 border flex flex-col gap-3 transition-all duration-300 group backdrop-blur-sm ${cardClass}`}
+      className={`rounded-xl p-5 border flex flex-col gap-3 transition-all duration-300 group backdrop-blur-sm hover:-translate-y-0.5 ${cardClass}`}
     >
       {/* Icon */}
       <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono flex-shrink-0 ${iconClass}`}>
@@ -55,7 +55,7 @@ function WritingCard({ topic }) {
           {topic.title}
         </h3>
         {topic.sublabel && (
-          <span className="text-xs font-mono text-gray-600 tracking-widest">
+          <span className="text-[10px] font-mono text-gray-600 tracking-[0.2em]">
             {topic.sublabel}
           </span>
         )}
@@ -87,19 +87,22 @@ export default function Writing() {
             <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-5">
               <span className="text-gradient-gold">9개월</span>의 기록이
               <br />
-              성장이 되었습니다.
+              저를 성장시켰습니다.
             </h2>
             <p className="text-gray-400 text-sm leading-relaxed">
               지난 9개월 동안 퇴근 후의 생각과 시도를 기록해왔습니다.
               <br />
               직장인 성장, AI 활용, 콘텐츠 제작, 일상 속 깨달음을 중심으로
               <br />
-              거창한 성공담보다 현실적인 성장 과정을 담고 있습니다.
+              완벽한 성공담보다 매일 조금씩 나아지는 과정을 남기고 있습니다.
             </p>
           </div>
 
           {/* CTA buttons */}
-          <div className="flex flex-row md:flex-col gap-3 flex-shrink-0">
+          <div className="flex flex-col gap-3 flex-shrink-0">
+            <p className="text-xs text-gray-600 font-mono tracking-widest">
+              기록은 여기에서 이어가고 있습니다.
+            </p>
             <a
               href="https://www.instagram.com/94hyeonseo"
               target="_blank"

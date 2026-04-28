@@ -123,7 +123,7 @@ export const writingTopics = [
   {
     icon: "◎",
     title: "AI 활용 기록",
-    description: "ChatGPT와 Codex를 활용해 아이디어를 결과물로 만드는 과정",
+    description: "ChatGPT와 Codex로 아이디어를 결과물로 만드는 과정",
     accent: "violet",
   },
   {
