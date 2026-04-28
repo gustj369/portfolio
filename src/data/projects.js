@@ -87,29 +87,41 @@ export const techStack = [
 
 export const writingTopics = [
   {
-    icon: "📈",
+    icon: "↗",
     title: "직장인 성장",
-    description: "퇴근 후에도 배우고 만드는 것을 멈추지 않는 이야기",
+    description: "회사 생활에서 배운 태도, 관계, 일하는 방식의 기록",
+    accent: "gold",
   },
   {
-    icon: "🤖",
+    icon: "◎",
     title: "AI 활용 기록",
-    description: "AI를 실제 작업에 녹여 쓴 경험과 시행착오",
+    description: "ChatGPT와 Codex를 활용해 아이디어를 결과물로 만드는 과정",
+    accent: "violet",
   },
   {
-    icon: "📚",
+    icon: "○",
     title: "퇴근 후 공부",
-    description: "하루 30분, 작게 쌓아가는 학습의 기록",
+    description: "하루 30분씩 쌓아가는 학습과 루틴의 기록",
+    accent: null,
   },
   {
-    icon: "🃏",
+    icon: "▣",
     title: "콘텐츠 제작 실험",
-    description: "카드뉴스, 글쓰기, 프롬프트 설계 과정의 뒷이야기",
+    description: "카드뉴스, 글쓰기, 프롬프트 설계 과정을 실험하고 기록",
+    accent: null,
   },
   {
-    icon: "💡",
+    icon: "◇",
     title: "일상의 인사이트",
-    description: "평범한 하루에서 건져 올린 생각의 파편들",
+    description: "평범한 하루에서 발견한 생각과 감정의 조각들",
+    accent: null,
+  },
+  {
+    icon: "✦",
+    title: "드라마틱 라이프",
+    description: "평범한 일상을 다른 시선으로 바라보는 카드뉴스 시리즈",
+    accent: null,
+    sublabel: "DRAMATIC LIFE",
   },
 ];
 
