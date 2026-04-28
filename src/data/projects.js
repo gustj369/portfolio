@@ -56,20 +56,32 @@ export const projects = [
 
 export const techStack = [
   {
-    category: "Frontend",
-    items: ["HTML", "CSS", "JavaScript", "Python"],
+    category: "FRONTEND",
+    description: "웹 화면을 구성하고 반응형 UI를 구현합니다.",
+    items: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
+    highlight: ["React", "Tailwind CSS"],
+    color: "gold",
   },
   {
-    category: "Tools",
-    items: ["GitHub", "Codex", "ChatGPT", "VBA"],
+    category: "PROGRAMMING & AUTOMATION",
+    description: "반복 업무를 줄이고 작은 자동화 도구를 만듭니다.",
+    items: ["Python", "VBA", "Automation"],
+    highlight: ["Python"],
+    color: "gold",
   },
   {
-    category: "Content",
-    items: ["Instagram", "Threads", "Prompt Design"],
+    category: "AI WORKFLOW",
+    description: "아이디어 정리, 코드 작성, 콘텐츠 제작에 AI를 활용합니다.",
+    items: ["ChatGPT", "Codex", "Prompt Design"],
+    highlight: ["ChatGPT", "Codex"],
+    color: "violet",
   },
   {
-    category: "Interest",
-    items: ["Game Dev", "Automation", "Portfolio", "AI Workflow"],
+    category: "CONTENT & BRANDING",
+    description: "글과 이미지 기반 콘텐츠로 생각을 정리하고 공유합니다.",
+    items: ["Instagram", "Threads", "Portfolio"],
+    highlight: [],
+    color: "slate",
   },
 ];
 
