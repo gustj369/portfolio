@@ -13,10 +13,11 @@ const ArrowIcon = () => (
 );
 
 const statusConfig = {
-  Live: "text-gold-400 border-gold-500/30 bg-gold-500/8",
+  Playable:  "text-gold-400 border-gold-500/30 bg-gold-500/8",
+  Live:      "text-gold-400 border-gold-500/30 bg-gold-500/8",
   Completed: "text-gold-400 border-gold-500/30 bg-gold-500/8",
   Prototype: "text-violet-400 border-violet-500/30 bg-violet-500/8",
-  Archive: "text-gray-500 border-dark-400 bg-dark-600/30",
+  Archive:   "text-gray-500 border-dark-400 bg-dark-600/30",
 };
 
 function StatusPill({ status }) {
@@ -29,11 +30,11 @@ function StatusPill({ status }) {
 }
 
 function ProjectCard({ project }) {
-  const { featured, color, status, title, description, tags, github, demo, demoLabel } = project;
+  const { featured, color, status, title, sublabel, description, tags, github, demo, demoLabel } = project;
   const isSlate = color === "slate";
   const isViolet = color === "violet";
 
-  const cardBase = "rounded-2xl p-6 flex flex-col gap-4 border transition-all duration-300 group hover:-translate-y-1";
+  const cardBase = "rounded-2xl p-6 flex flex-col gap-3.5 border transition-all duration-300 group hover:-translate-y-1";
   const cardAccent = featured
     ? "border-gold-500/25 bg-dark-800/60 hover:border-gold-500/45 hover:shadow-[0_0_24px_rgba(212,168,67,0.07)]"
     : isSlate
@@ -74,6 +75,15 @@ function ProjectCard({ project }) {
         {title}
       </h3>
 
+      {/* Sublabel — 한 줄 소개 */}
+      {sublabel && (
+        <p className={`text-xs leading-relaxed -mt-1 ${
+          isSlate ? "text-gray-600" : isViolet ? "text-violet-400/60" : "text-gold-500/60"
+        }`}>
+          {sublabel}
+        </p>
+      )}
+
       {/* Description */}
       <p className={`text-sm leading-relaxed flex-1 ${isSlate ? "text-gray-600" : "text-gray-500"}`}>
         {description}
@@ -85,9 +95,7 @@ function ProjectCard({ project }) {
           <span
             key={tag}
             className={`px-2 py-0.5 text-xs rounded border ${
-              isSlate
-                ? "border-dark-500/50 text-gray-600"
-                : "border-dark-400/60 text-gray-500"
+              isSlate ? "border-dark-500/50 text-gray-600" : "border-dark-400/60 text-gray-500"
             }`}
           >
             {tag}
@@ -104,10 +112,8 @@ function ProjectCard({ project }) {
           href={primaryHref}
           target="_blank"
           rel="noopener noreferrer"
-          className={`inline-flex items-center gap-1.5 text-xs transition-colors duration-200 ${
-            isSlate
-              ? "text-gray-500 hover:text-gray-300"
-              : "text-gray-400 hover:text-gold-400"
+          className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors duration-200 ${
+            isSlate ? "text-gray-500 hover:text-gray-300" : "text-gray-300 hover:text-gold-400"
           }`}
         >
           {demoLabel || "자세히 보기"}
@@ -120,7 +126,7 @@ function ProjectCard({ project }) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-gray-400 transition-colors duration-200"
           >
-            GitHub
+            코드 보기
           </a>
         )}
       </div>
@@ -144,9 +150,9 @@ export default function Projects() {
             <span className="text-gradient-gold">작은 결과물들</span>
           </h2>
           <p className="text-sm text-gray-500 max-w-xs md:text-right leading-relaxed">
-            작은 아이디어를 코드로 옮기고,
+            아이디어에서 멈추지 않고,
             <br />
-            작동하는 형태로 완성해 공개합니다.
+            실제로 작동하는 형태까지 만듭니다.
           </p>
         </div>
 
