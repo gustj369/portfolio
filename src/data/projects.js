@@ -180,9 +180,9 @@ export const workflowSteps = [
   },
   {
     step: "05",
-    title: "문서화와 콘텐츠화",
+    title: "기록과 문서화",
     description:
-      "README, 사용 설명, 제작 과정을 정리하고 콘텐츠로도 확장합니다.",
+      "README, 사용 설명, 제작 과정을 정리하고 다음 개선점까지 남깁니다.",
   },
   {
     step: "06",

@@ -1,6 +1,19 @@
 import { workflowSteps } from "../data/projects";
 
-const tools = ["ChatGPT", "Codex", "GitHub", "Figma"];
+const flowSteps = ["생각", "구조", "실행", "공개"];
+
+const tools = [
+  { name: "ChatGPT", role: "아이디어 정리 · 문장화" },
+  { name: "Codex",   role: "코드 구조 · 구현 보조" },
+  { name: "GitHub",  role: "버전 관리 · 공개" },
+  { name: "Figma",   role: "화면 설계 · 레이아웃" },
+];
+
+const resultProjects = [
+  { name: "Legend League",             href: "#projects" },
+  { name: "Asset Portfolio Dashboard", href: "#projects" },
+  { name: "DEV·CREATOR Portfolio",     href: "#projects" },
+];
 
 export default function AIWorkflow() {
   return (
@@ -26,18 +39,41 @@ export default function AIWorkflow() {
           </p>
         </div>
 
-        {/* Tools pill row */}
-        <div className="flex items-center gap-3 mb-12 flex-wrap">
-          <span className="text-xs font-mono text-gray-700 tracking-widest">TOOLS USED</span>
-          <div className="w-4 h-px bg-dark-500/60" />
-          {tools.map((tool) => (
-            <span
-              key={tool}
-              className="px-2.5 py-1 text-xs font-mono rounded-lg border border-dark-400/50 text-gray-600 bg-dark-800/40"
-            >
-              {tool}
-            </span>
-          ))}
+        {/* Flow pill */}
+        <div className="flex items-center gap-1.5 mb-8 flex-wrap">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-dark-400/50 bg-dark-800/30">
+            {flowSteps.map((step, i) => (
+              <span key={step} className="inline-flex items-center gap-2">
+                <span className="text-xs font-mono text-gray-500">{step}</span>
+                {i < flowSteps.length - 1 && (
+                  <span className="text-gold-500/50 text-xs">→</span>
+                )}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Tools row */}
+        <div className="flex items-start gap-3 mb-12 flex-wrap">
+          <span className="text-xs font-mono text-gray-700 tracking-widest pt-2.5">
+            TOOLS USED
+          </span>
+          <div className="w-4 h-px bg-dark-500/60 mt-4 hidden sm:block" />
+          <div className="flex gap-2.5 flex-wrap">
+            {tools.map((tool) => (
+              <div
+                key={tool.name}
+                className="px-3 py-2 rounded-lg border border-dark-400/50 bg-dark-800/40"
+              >
+                <p className="text-xs font-mono text-gray-400 leading-none mb-1">
+                  {tool.name}
+                </p>
+                <p className="text-[10px] text-gray-700 leading-none whitespace-nowrap">
+                  {tool.role}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Workflow cards */}
@@ -49,7 +85,7 @@ export default function AIWorkflow() {
             >
               {/* Step number + flow line */}
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-xs font-mono text-gold-500/70 tracking-widest flex-shrink-0">
+                <span className="text-xs font-mono text-gold-500/70 tracking-widest flex-shrink-0 group-hover:text-gold-400 transition-colors duration-200">
                   {step.step}
                 </span>
                 <div className="flex-1 h-px bg-dark-400/50 group-hover:bg-gold-500/25 transition-colors duration-300" />
@@ -68,11 +104,30 @@ export default function AIWorkflow() {
           ))}
         </div>
 
+        {/* Result projects row */}
+        <div className="flex items-center gap-3 mt-8 flex-wrap">
+          <span className="text-xs font-mono text-gray-700 tracking-widest">
+            이 흐름으로 만든 결과물
+          </span>
+          <div className="w-3 h-px bg-dark-500/60 hidden sm:block" />
+          <div className="flex gap-2 flex-wrap">
+            {resultProjects.map((p) => (
+              <a
+                key={p.name}
+                href={p.href}
+                className="px-2.5 py-1 text-xs font-mono rounded border border-dark-400/50 text-gray-600 hover:text-gray-400 hover:border-dark-300/50 transition-colors duration-200"
+              >
+                {p.name}
+              </a>
+            ))}
+          </div>
+        </div>
+
         {/* Bottom callout */}
-        <div className="mt-12 p-6 rounded-xl border border-gold-500/15 bg-gold-500/5">
+        <div className="mt-10 p-6 rounded-xl border border-gold-500/15 bg-gold-500/5">
           <p className="text-sm text-gray-400 leading-relaxed text-center">
             <span className="text-gold-400 font-medium">핵심은 완성입니다.</span>{" "}
-            AI는 속도를 높여주지만, 결과물을 끝까지 만드는 건 결국 판단력과 끈기입니다.
+            AI는 도와주지만, 끝까지 만드는 건 결국 사람의 판단과 끈기입니다.
           </p>
         </div>
       </div>
