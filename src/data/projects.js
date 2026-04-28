@@ -18,6 +18,7 @@ export const projects = [
     tags: ["Dashboard", "Finance", "Data Visualization"],
     github: "https://github.com/gustj369/portfolio-report",
     demo: "https://portfolio-report-roan.vercel.app",
+    demoLabel: "라이브 보기",
     color: "violet",
   },
   {
@@ -42,12 +43,13 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Prompt Archive",
+    title: "DEV·CREATOR Portfolio",
     description:
-      "자주 쓰는 AI 프롬프트를 저장하고 재사용하기 위한 프롬프트 보관함. 상황별로 분류하고 필요할 때 바로 꺼내 쓸 수 있도록 설계했다.",
-    tags: ["AI Workflow", "Prompt", "Tool"],
-    github: "https://github.com/gustj369/prompt-archive",
-    demo: "#",
+      "AI와 개발로 작은 결과물을 만드는 개발자의 포트폴리오 웹사이트. React와 Tailwind CSS로 직접 설계하고 구현했다. 이 사이트 자체가 하나의 프로젝트다.",
+    tags: ["React", "Tailwind CSS", "Portfolio", "AI Coding"],
+    github: "https://github.com/gustj369/portfolio",
+    demo: "https://portfolio-mu-ten-64.vercel.app/",
+    demoLabel: "라이브 보기",
     color: "gold",
   },
 ];
