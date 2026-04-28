@@ -64,12 +64,12 @@ function ProjectCard({ project }) {
 
       {/* CTA */}
       <a
-        href={project.github}
+        href={project.demoLabel && project.demo !== "#" ? project.demo : project.github}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-auto inline-flex items-center gap-1.5 text-xs text-gray-500 hover:text-gold-400 transition-colors duration-200"
       >
-        자세히 보기
+        {project.demoLabel || "자세히 보기"}
         <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
         </svg>

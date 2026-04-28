@@ -7,6 +7,7 @@ export const projects = [
     tags: ["Game", "JavaScript", "AI Coding", "Prototype"],
     github: "https://github.com/gustj369/my-starleague",
     demo: "https://drive.google.com/file/d/1VES7V1eHAdyd9ffJ3psmgsXPclXHLSkE/view?usp=drive_link",
+    demoLabel: "다운로드",
     color: "gold",
   },
   {
