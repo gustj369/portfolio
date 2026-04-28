@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Personal Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+AI와 개발로 작은 결과물을 만드는 개발자의 포트폴리오 웹사이트.
 
-## Available Scripts
+## 기술 스택
 
-In the project directory, you can run:
+- **React** — 컴포넌트 기반 UI
+- **Tailwind CSS v3** — 유틸리티 퍼스트 스타일링
+- **Create React App** — 프로젝트 세팅
 
-### `npm start`
+## 실행 방법
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+# 의존성 설치
+npm install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# 개발 서버 실행 (http://localhost:3000)
+npm start
 
-### `npm test`
+# 프로덕션 빌드
+npm run build
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 프로젝트 구조
 
-### `npm run build`
+```
+src/
+├── components/
+│   ├── Navbar.jsx        # 상단 내비게이션
+│   ├── Hero.jsx          # 히어로 섹션
+│   ├── About.jsx         # 소개 섹션
+│   ├── Projects.jsx      # 프로젝트 카드 섹션
+│   ├── AIWorkflow.jsx    # AI 활용 방식 섹션
+│   ├── Writing.jsx       # 글쓰기 / 콘텐츠 섹션
+│   ├── TechStack.jsx     # 기술 스택 섹션
+│   └── Contact.jsx       # 연락처 섹션
+├── data/
+│   └── projects.js       # 프로젝트·스택·글쓰기 데이터 (배열 관리)
+├── App.js
+└── index.css
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 커스터마이즈
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 프로젝트 수정
+`src/data/projects.js`의 `projects` 배열을 수정하면 Projects 섹션이 자동으로 업데이트됩니다.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 링크 교체
+각 컴포넌트에서 `yourusername` 또는 `your@email.com`을 실제 값으로 교체하세요.
 
-### `npm run eject`
+- `Contact.jsx` — GitHub / Instagram / Threads / Email 링크
+- `Hero.jsx` — GitHub 버튼 링크
+- `Projects.jsx` — 각 프로젝트의 `github`, `demo` 링크
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 색상 테마
+`tailwind.config.js`의 `colors` 섹션에서 골드(`gold`)와 바이올렛(`violet`) 컬러를 조정할 수 있습니다.
