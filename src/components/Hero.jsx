@@ -1,3 +1,15 @@
+const statCards = [
+  { value: "9 MONTHS", label: "꾸준히 쌓은 글쓰기", mono: true },
+  { value: "5 PROJECTS", label: "직접 만든 결과물", mono: true },
+  { value: "AI WORKFLOW", label: "Codex · ChatGPT · GitHub", mono: false },
+];
+
+const mobileStats = [
+  { value: "9 MONTHS", label: "글쓰기" },
+  { value: "5 PROJECTS", label: "결과물" },
+  { value: "AI WORKFLOW", label: null },
+];
+
 export default function Hero() {
   return (
     <section
@@ -6,7 +18,7 @@ export default function Hero() {
     >
       {/* Background grid */}
       <div
-        className="absolute inset-0 opacity-[0.025]"
+        className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage:
             "linear-gradient(#d4a843 1px, transparent 1px), linear-gradient(90deg, #d4a843 1px, transparent 1px)",
@@ -14,11 +26,14 @@ export default function Hero() {
         }}
       />
 
-      {/* Glow blobs */}
-      <div className="absolute top-1/4 -left-32 w-96 h-96 rounded-full bg-gold-600/8 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 -right-24 w-72 h-72 rounded-full bg-violet-600/8 blur-3xl pointer-events-none" />
+      {/* Left glow blob */}
+      <div className="absolute top-1/3 -left-40 w-[480px] h-[480px] rounded-full bg-gold-600/6 blur-3xl pointer-events-none" />
+      {/* Right glow — behind stat cards */}
+      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-80 h-80 rounded-full bg-gold-500/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/3 -right-20 w-64 h-64 rounded-full bg-violet-600/6 blur-3xl pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto w-full pt-20 pb-16">
+      {/* Main content — extra bottom padding shifts content above center */}
+      <div className="relative max-w-6xl mx-auto w-full pt-16 pb-28">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
 
           {/* Left: Text + CTA */}
@@ -27,7 +42,7 @@ export default function Hero() {
               Developer · Creator
             </p>
 
-            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[3.5rem] font-semibold leading-tight tracking-tight mb-6 animate-slide-up">
+            <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[3.5rem] font-semibold leading-[1.15] tracking-tight mb-7 animate-slide-up">
               작은 아이디어를
               <br />
               <span className="text-gradient-gold">AI와 코드로</span>
@@ -38,13 +53,13 @@ export default function Hero() {
             <p className="text-base md:text-lg text-gray-400 leading-relaxed mb-10 animate-slide-up">
               코드와 콘텐츠, 일상의 아이디어를 연결해
               <br className="hidden sm:block" />
-              작게 만들고 직접 써보며 개선합니다.
+              작게 만들고 공개하며 계속 개선합니다.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 animate-fade-in">
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold-500 hover:bg-gold-400 text-dark-900 text-sm font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(212,168,67,0.3)]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold-500 hover:bg-gold-400 text-dark-900 text-sm font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(212,168,67,0.28)]"
               >
                 프로젝트 보기
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -66,11 +81,7 @@ export default function Hero() {
 
             {/* Mobile stat pills */}
             <div className="flex md:hidden gap-2.5 mt-10 flex-wrap">
-              {[
-                { value: "9 MONTHS", label: "글쓰기" },
-                { value: "5 PROJECTS", label: "결과물" },
-                { value: "AI WORKFLOW", label: null },
-              ].map((s) => (
+              {mobileStats.map((s) => (
                 <div
                   key={s.value}
                   className="px-3.5 py-2 rounded-lg border border-dark-500/60 bg-dark-800/50 flex items-center gap-2"
@@ -83,29 +94,50 @@ export default function Hero() {
           </div>
 
           {/* Right: Stat cards — desktop only */}
-          <div className="hidden md:flex flex-col gap-4 ml-auto w-full max-w-[260px]">
-            <div className="rounded-xl p-5 border border-dark-500/50 bg-dark-800/50 backdrop-blur-sm">
-              <p className="text-lg font-semibold font-mono text-gold-400 mb-1">9 MONTHS</p>
-              <p className="text-xs text-gray-600 leading-relaxed">꾸준한 글쓰기</p>
-            </div>
-            <div className="rounded-xl p-5 border border-dark-500/50 bg-dark-800/50 backdrop-blur-sm">
-              <p className="text-lg font-semibold font-mono text-gold-400 mb-1">5 PROJECTS</p>
-              <p className="text-xs text-gray-600 leading-relaxed">직접 만든 결과물</p>
-            </div>
-            <div className="rounded-xl p-5 border border-dark-500/50 bg-dark-800/50 backdrop-blur-sm">
-              <p className="text-xs font-mono text-gold-500 tracking-widest mb-1.5">AI WORKFLOW</p>
-              <p className="text-xs text-gray-600 leading-relaxed">Codex · ChatGPT · GitHub</p>
-            </div>
+          <div className="hidden md:flex flex-col gap-4 ml-auto w-full max-w-[256px]">
+            {statCards.map((card) => (
+              <div
+                key={card.value}
+                className="rounded-xl px-6 py-5 border border-dark-500/50 bg-dark-800/50 backdrop-blur-sm transition-all duration-200 hover:border-gold-500/25 hover:-translate-y-0.5"
+              >
+                {card.mono ? (
+                  <p className="text-lg font-semibold font-mono text-gold-400 mb-1.5 leading-none">
+                    {card.value}
+                  </p>
+                ) : (
+                  <p className="text-xs font-mono text-gold-500 tracking-widest mb-2">
+                    {card.value}
+                  </p>
+                )}
+                <p className="text-xs text-gray-600 leading-relaxed">{card.label}</p>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-0 left-0 hidden md:flex flex-col items-center gap-2 opacity-30">
-          <div className="w-px h-10 bg-gradient-to-b from-transparent to-gold-500" />
-          <span className="text-xs font-mono text-gold-500 tracking-widest rotate-90 origin-left translate-y-5">
-            SCROLL
-          </span>
+        {/* Section bottom hint — thin line fading in */}
+        <div className="hidden md:block absolute bottom-0 left-0 right-0">
+          <div className="h-px bg-gradient-to-r from-transparent via-dark-500/30 to-transparent" />
         </div>
+      </div>
+
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-6 hidden md:flex flex-col items-center gap-3 opacity-50">
+        <div className="w-px h-8 bg-gradient-to-b from-gold-500/70 to-transparent" />
+        <span
+          className="text-[10px] font-mono text-gold-500 tracking-[0.25em]"
+          style={{ writingMode: "vertical-rl" }}
+        >
+          SCROLL
+        </span>
+        <svg
+          className="w-3 h-3 text-gold-500 animate-scroll-drop"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+        </svg>
       </div>
     </section>
   );
