@@ -2,7 +2,7 @@ const identityTags = [
   { label: "개발자", accent: "gold" },
   { label: "AI 워크플로우 빌더", accent: "violet" },
   { label: "콘텐츠 크리에이터", accent: null },
-  { label: "작은 제품을 만드는 사람", accent: null },
+  { label: "작은 서비스를 만드는 사람", accent: null },
   { label: "기록하는 사람", accent: null },
 ];
 
@@ -10,7 +10,7 @@ const focusAreas = [
   "AI 활용과 자동화 도구",
   "미니게임 제작과 배포",
   "개인 자산 대시보드",
-  "세컨드 브레인과 생산성 시스템",
+  "개인 지식관리 앱과 생산성 시스템",
   "인스타 카드뉴스 콘텐츠",
   "글쓰기와 생각 정리",
 ];
@@ -21,7 +21,7 @@ function IdentityTag({ label, accent }) {
       ? "border-gold-500/40 bg-gold-500/8 text-gold-300"
       : accent === "violet"
       ? "border-violet-500/40 bg-violet-500/8 text-violet-300"
-      : "border-dark-400 text-gray-300";
+      : "border-dark-400/70 text-gray-300";
   return (
     <span className={`px-3 py-1 text-xs rounded-full border ${cls}`}>
       {label}
@@ -48,13 +48,14 @@ export default function About() {
             </h2>
             <div className="space-y-5 text-gray-400 text-base leading-relaxed">
               <p>
-                AI를 단순히 쓰는 데서 멈추지 않고,
+                AI를 단순히 사용하는 데서 멈추지 않고,
                 <br />
-                개발과 콘텐츠 제작 과정에 연결해 작은 결과물로 만듭니다.
+                개발과 콘텐츠 제작 과정에 연결해
+                실제로 작동하는 결과물로 만듭니다.
               </p>
               <p>
                 Codex로 코드의 구조를 잡고, ChatGPT로 아이디어와 문장을 정리하며,
-                <br />
+                <br className="hidden sm:block" />
                 미니게임, 자산 대시보드, 생산성 도구, 카드뉴스 같은 프로젝트를
                 꾸준히 쌓아가고 있습니다.
               </p>
@@ -104,7 +105,7 @@ export default function About() {
                 "
                 <span className="text-gold-400 not-italic font-medium">작게</span>{" "}
                 만들고,{" "}
-                <span className="text-gold-400 not-italic font-medium">공개</span>하며,{" "}
+                <span className="text-gold-400 not-italic font-medium">직접 써보고</span>,
                 계속 고쳐갑니다."
               </p>
             </div>
