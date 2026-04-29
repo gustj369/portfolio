@@ -30,7 +30,7 @@ function StatusPill({ status }) {
 }
 
 function ProjectCard({ project }) {
-  const { featured, color, status, title, sublabel, description, tags, github, demo, demoLabel } = project;
+  const { featured, color, status, title, sublabel, description, keyBuild, tags, github, demo, demoLabel } = project;
   const isSlate = color === "slate";
   const isViolet = color === "violet";
 
@@ -88,6 +88,17 @@ function ProjectCard({ project }) {
       <p className={`text-sm leading-relaxed flex-1 ${isSlate ? "text-gray-600" : "text-gray-500"}`}>
         {description}
       </p>
+
+      {/* Key Build */}
+      {keyBuild && (
+        <p className={`text-[10px] font-mono leading-relaxed border-t pt-2.5 -mt-0.5 ${
+          isSlate
+            ? "text-gray-700 border-dark-600/25"
+            : "text-gray-600 border-dark-600/50"
+        }`}>
+          {keyBuild}
+        </p>
+      )}
 
       {/* Tags */}
       <div className="flex flex-wrap gap-1.5">
