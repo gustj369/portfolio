@@ -1,25 +1,7 @@
 import { writingTopics } from "../data/projects";
 
-const stats = [
-  {
-    value: "9 MONTHS",
-    label: "퇴근 후에도 이어온 기록",
-    color: "gold",
-  },
-  {
-    value: "2 CHANNELS",
-    label: "Threads · Instagram",
-    color: "violet",
-  },
-  {
-    value: "6 THEMES",
-    label: "성장 · AI · 공부 · 콘텐츠 · 일상 · 카드뉴스",
-    color: "slate",
-  },
-];
-
 function WritingCard({ topic }) {
-  const isGold = topic.accent === "gold";
+  const isGold   = topic.accent === "gold";
   const isViolet = topic.accent === "violet";
 
   const cardClass = isGold
@@ -62,9 +44,23 @@ function WritingCard({ topic }) {
       </div>
 
       {/* Description */}
-      <p className="text-xs text-gray-500 leading-relaxed">
+      <p className="text-xs text-gray-500 leading-relaxed flex-1">
         {topic.description}
       </p>
+
+      {/* Tags */}
+      {topic.tags && topic.tags.length > 0 && (
+        <div className="flex flex-wrap gap-1.5">
+          {topic.tags.map((tag) => (
+            <span
+              key={tag}
+              className="px-2 py-0.5 text-[10px] font-mono rounded border border-dark-500/60 text-gray-600"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -80,40 +76,55 @@ export default function Writing() {
         </p>
         <div className="section-divider mb-10" />
 
-        {/* Header row */}
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-10">
-          {/* Title + description */}
-          <div className="max-w-xl">
-            <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-5">
-              <span className="text-gradient-gold">9개월</span>의 기록이
-              <br />
-              저를 성장시켰습니다.
-            </h2>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              지난 9개월 동안 퇴근 후의 생각과 시도를 기록해왔습니다.
-              <br />
-              직장인 성장, AI 활용, 콘텐츠 제작, 일상 속 깨달음을 중심으로
-              <br />
-              완벽한 성공담보다 매일 조금씩 나아지는 과정을 남기고 있습니다.
-            </p>
-          </div>
+        {/* Headline */}
+        <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-5">
+          <span className="text-gradient-gold">9개월</span>의 기록이
+          <br />
+          저를 바꿨습니다.
+        </h2>
 
-          {/* CTA buttons */}
-          <div className="flex flex-col gap-3 flex-shrink-0">
-            <p className="text-xs text-gray-600 font-mono tracking-widest">
-              기록은 여기에서 이어가고 있습니다.
-            </p>
-            <a
-              href="https://www.instagram.com/94hyeonseo"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400 hover:border-gold-500/50 text-gray-400 hover:text-gold-400 text-sm transition-all duration-200 hover:-translate-y-0.5"
-            >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-              </svg>
-              Instagram 보기
-            </a>
+        {/* Body copy */}
+        <div className="space-y-4 text-sm text-gray-400 leading-relaxed max-w-xl mb-8">
+          <p>
+            지난 9개월 동안 퇴근 후의 생각과 시도를 기록해왔습니다.
+            <br className="hidden sm:block" />
+            직장인 성장, AI 활용, 영어 공부, 콘텐츠 제작, 일상 속 작은 변화를 중심으로
+            완벽한 성공담보다 매일 조금씩 나아지는 과정을 남기고 있습니다.
+          </p>
+          <p>
+            글은 저에게 단순한 기록이 아니라,
+            <br />
+            아이디어를 정리하고 프로젝트로 이어가는 출발점입니다.
+          </p>
+        </div>
+
+        {/* DRAMATIC LIFE callout */}
+        <div className="mb-12 px-4 py-3.5 rounded-xl border border-dark-500/40 bg-dark-800/30 max-w-sm">
+          <p className="text-[10px] font-mono text-gray-700 tracking-[0.25em] mb-1.5">
+            DRAMATIC LIFE
+          </p>
+          <p className="text-xs text-gray-500 leading-relaxed">
+            평범한 직장인의 하루를
+            다른 시선으로 바라보는 기록입니다.
+          </p>
+        </div>
+
+        {/* Topic cards — 3-col desktop, 2-col tablet, 1-col mobile */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
+          {writingTopics.map((topic) => (
+            <WritingCard key={topic.title} topic={topic} />
+          ))}
+        </div>
+
+        {/* Bottom CTA */}
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-8 border-t border-dark-600/40">
+          <p className="text-sm text-gray-500 leading-relaxed">
+            기록은 아직 완성된 답이 아니라,
+            <br />
+            계속 고쳐가는 과정입니다.
+          </p>
+          <div className="flex flex-col gap-2.5 flex-shrink-0">
+            {/* Primary — Threads */}
             <a
               href="https://www.threads.com/@94hyeonseo"
               target="_blank"
@@ -125,46 +136,21 @@ export default function Writing() {
               </svg>
               Threads 보기
             </a>
+            {/* Secondary — Instagram */}
+            <a
+              href="https://www.instagram.com/94hyeonseo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 hover:border-dark-300/60 text-gray-600 hover:text-gray-400 text-sm transition-all duration-200 hover:-translate-y-0.5"
+            >
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+              Instagram 보기
+            </a>
           </div>
         </div>
 
-        {/* Stat pills */}
-        <div className="flex flex-col sm:flex-row gap-3 mb-14">
-          {stats.map((stat) => {
-            const borderClass =
-              stat.color === "gold"
-                ? "border-gold-500/20"
-                : stat.color === "violet"
-                ? "border-violet-500/20"
-                : "border-dark-400/60";
-            const valueClass =
-              stat.color === "gold"
-                ? "text-gold-400"
-                : stat.color === "violet"
-                ? "text-violet-400"
-                : "text-gray-400";
-            return (
-              <div
-                key={stat.value}
-                className={`flex-1 px-5 py-3.5 rounded-xl border bg-dark-800/40 ${borderClass}`}
-              >
-                <p className={`text-xs font-mono font-semibold tracking-widest mb-0.5 ${valueClass}`}>
-                  {stat.value}
-                </p>
-                <p className="text-xs text-gray-600 leading-relaxed">
-                  {stat.label}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Topic cards — 3-col desktop, 2-col tablet, 1-col mobile */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {writingTopics.map((topic) => (
-            <WritingCard key={topic.title} topic={topic} />
-          ))}
-        </div>
       </div>
     </section>
   );
