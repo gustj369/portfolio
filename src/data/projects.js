@@ -164,7 +164,7 @@ export const workflowSteps = [
     step: "01",
     title: "아이디어 정리",
     description:
-      "막연한 아이디어를 기능, 화면, 콘텐츠 단위로 나눕니다.",
+      "막연한 생각을 기능, 화면, 콘텐츠 단위로 나눕니다.",
   },
   {
     step: "02",
@@ -174,7 +174,7 @@ export const workflowSteps = [
   },
   {
     step: "03",
-    title: "실행과 검증",
+    title: "구현과 검증",
     description:
       "직접 실행하며 오류를 확인하고, 예상과 다른 부분을 기록합니다.",
   },
@@ -188,7 +188,7 @@ export const workflowSteps = [
     step: "05",
     title: "기록과 문서화",
     description:
-      "README, 사용 설명, 제작 과정을 정리하고 다음 개선점까지 남깁니다.",
+      "README, 사용 설명, 제작 과정을 정리하고 다음 개선 지점을 남깁니다.",
   },
   {
     step: "06",

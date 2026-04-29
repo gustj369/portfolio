@@ -1,6 +1,6 @@
 import { workflowSteps } from "../data/projects";
 
-const flowSteps = ["생각", "구조", "실행", "공개"];
+const flowSteps = ["생각", "구조", "구현", "검증", "기록", "공개"];
 
 const tools = [
   { name: "ChatGPT", role: "아이디어 정리 · 문장화" },
@@ -28,14 +28,14 @@ export default function AIWorkflow() {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
           <h2 className="text-3xl md:text-4xl font-semibold leading-snug">
-            AI로 시작해,
+            AI로 시작하지만,
             <br />
-            <span className="text-gradient-gold">결과물로 완성합니다.</span>
+            <span className="text-gradient-gold">완성은 직접 합니다.</span>
           </h2>
           <p className="text-sm text-gray-500 max-w-xs md:text-right leading-relaxed">
             프롬프트보다 중요한 건,
             <br />
-            작게 만들고 끝까지 다듬는 과정이라고 믿습니다.
+            작게 만들고 끝까지 다듬는 과정이라고 생각합니다.
           </p>
         </div>
 
@@ -107,7 +107,7 @@ export default function AIWorkflow() {
         {/* Result projects row */}
         <div className="flex items-center gap-3 mt-8 flex-wrap">
           <span className="text-xs font-mono text-gray-700 tracking-widest">
-            이 흐름으로 만든 결과물
+            이 흐름으로 만든 결과물들
           </span>
           <div className="w-3 h-px bg-dark-500/60 hidden sm:block" />
           <div className="flex gap-2 flex-wrap">
@@ -127,7 +127,7 @@ export default function AIWorkflow() {
         <div className="mt-10 p-6 rounded-xl border border-gold-500/15 bg-gold-500/5">
           <p className="text-sm text-gray-400 leading-relaxed text-center">
             <span className="text-gold-400 font-medium">핵심은 완성입니다.</span>{" "}
-            AI는 도와주지만, 끝까지 만드는 건 결국 사람의 판단과 끈기입니다.
+            AI는 도와주지만, 끝까지 만드는 건 결국 사람의 판단과 끈기라고 생각합니다.
           </p>
         </div>
       </div>
