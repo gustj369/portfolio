@@ -91,3 +91,18 @@ body {
     animation: scrollDrop 1.8s ease-in-out infinite;
   }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll-drop {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

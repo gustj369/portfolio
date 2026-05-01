@@ -11,11 +11,32 @@ const navLinks = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = navLinks.map((l) => l.href.slice(1));
+    const observers = [];
+
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const obs = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setActiveSection(id);
+        },
+        { rootMargin: "-40% 0px -50% 0px", threshold: 0 }
+      );
+      obs.observe(el);
+      observers.push(obs);
+    });
+
+    return () => observers.forEach((obs) => obs.disconnect());
   }, []);
 
   return (
@@ -36,16 +57,23 @@ export default function Navbar() {
 
         {/* Desktop nav */}
         <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.label}>
-              <a
-                href={link.href}
-                className="text-sm text-gray-400 hover:text-gold-400 transition-colors duration-200 tracking-wide"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.href.slice(1);
+            return (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  className={`text-sm transition-colors duration-200 tracking-wide ${
+                    isActive
+                      ? "text-gold-400"
+                      : "text-gray-400 hover:text-gold-400"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
         </ul>
 
         {/* Mobile hamburger */}
@@ -76,17 +104,24 @@ export default function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-dark-800/95 backdrop-blur-md border-t border-dark-600/50">
           <ul className="px-6 py-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <li key={link.label}>
-                <a
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="block text-sm text-gray-400 hover:text-gold-400 transition-colors py-1"
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = activeSection === link.href.slice(1);
+              return (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className={`block text-sm transition-colors py-1 ${
+                      isActive
+                        ? "text-gold-400"
+                        : "text-gray-400 hover:text-gold-400"
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       )}
