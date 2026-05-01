@@ -84,17 +84,11 @@ export default function Writing() {
         </h2>
 
         {/* Body copy */}
-        <div className="space-y-4 text-sm text-gray-400 leading-relaxed max-w-xl mb-8">
+        <div className="text-sm text-gray-400 leading-relaxed max-w-xl mb-8">
           <p>
-            지난 9개월 동안 퇴근 후의 생각과 시도를 기록해왔습니다.
-            <br className="hidden sm:block" />
-            직장인 성장, AI 활용, 영어 공부, 콘텐츠 제작, 일상 속 작은 변화를 중심으로
-            완벽한 성공담보다 매일 조금씩 나아지는 과정을 남기고 있습니다.
-          </p>
-          <p>
-            글은 저에게 단순한 기록이 아니라,
+            퇴근 후에도 글을 쓰고, AI로 실험하며,
             <br />
-            아이디어를 정리하고 프로젝트로 이어가는 출발점입니다.
+            나만의 성장 기록을 쌓아가고 있습니다.
           </p>
         </div>
 
