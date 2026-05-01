@@ -1,3 +1,16 @@
+export const meta = {
+  writingStartDate: "2025-08-01",
+};
+
+export function getWritingMonths() {
+  const start = new Date(meta.writingStartDate);
+  const now = new Date();
+  return (
+    (now.getFullYear() - start.getFullYear()) * 12 +
+    (now.getMonth() - start.getMonth())
+  );
+}
+
 export const projects = [
   {
     id: 1,

@@ -1,16 +1,20 @@
-const statCards = [
-  { value: "9 MONTHS",    label: "퇴근 후 쌓은 기록",          mono: true  },
-  { value: "5 PROJECTS",  label: "직접 만들고 개선한 결과물",   mono: true  },
-  { value: "AI WORKFLOW", label: "ChatGPT · Codex · GitHub",   mono: false },
-];
-
-const mobileStats = [
-  { value: "9 MONTHS",    label: "퇴근 후 기록" },
-  { value: "5 PROJECTS",  label: "결과물"       },
-  { value: "AI WORKFLOW", label: null           },
-];
+import { getWritingMonths } from "../data/projects";
 
 export default function Hero() {
+  const months = getWritingMonths();
+
+  const statCards = [
+    { value: `${months} MONTHS`, label: "퇴근 후 쌓은 기록",          mono: true  },
+    { value: "5 PROJECTS",       label: "직접 만들고 개선한 결과물",   mono: true  },
+    { value: "AI WORKFLOW",      label: "ChatGPT · Codex · GitHub",   mono: false },
+  ];
+
+  const mobileStats = [
+    { value: `${months} MONTHS`, label: "퇴근 후 기록" },
+    { value: "5 PROJECTS",       label: "결과물"       },
+    { value: "AI WORKFLOW",      label: null           },
+  ];
+
   return (
     <section
       id="hero"

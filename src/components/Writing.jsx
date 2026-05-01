@@ -1,4 +1,4 @@
-import { writingTopics } from "../data/projects";
+import { writingTopics, getWritingMonths } from "../data/projects";
 
 function WritingCard({ topic }) {
   const isGold   = topic.accent === "gold";
@@ -66,6 +66,8 @@ function WritingCard({ topic }) {
 }
 
 export default function Writing() {
+  const months = getWritingMonths();
+
   return (
     <section id="writing" className="py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
@@ -78,7 +80,7 @@ export default function Writing() {
 
         {/* Headline */}
         <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-5">
-          <span className="text-gradient-gold">9개월</span>의 기록이
+          <span className="text-gradient-gold">{months}개월</span>의 기록이
           <br />
           저를 바꿨습니다.
         </h2>
