@@ -100,8 +100,19 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Stat cards — desktop only */}
+          {/* Right: Photo + Stat cards — desktop only */}
           <div className="hidden md:flex flex-col gap-4 ml-auto w-full max-w-[260px]">
+
+            {/* Profile photo */}
+            <div className="rounded-xl overflow-hidden border border-gold-500/20 bg-dark-800/40">
+              <img
+                src="/hyeonseo.png"
+                alt="현서 프로필"
+                className="w-full object-cover object-top"
+                style={{ aspectRatio: "3 / 4", maxHeight: "320px" }}
+              />
+            </div>
+
             {statCards.map((card) => (
               <div
                 key={card.value}
