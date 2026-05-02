@@ -22,7 +22,7 @@ export const projects = [
     keyBuild: "경기 흐름 · 결과 계산 · EXE 패키징",
     tags: ["JavaScript", "Mini Game", "League System"],
     github: "https://github.com/gustj369/my-starleague",
-    demo: "https://drive.google.com/file/d/1o6lF7AnZqTJneRuXVjx5nJHUGTQ3Lg41/view?usp=drive_link",
+    demo: "https://drive.google.com/file/d/119k7ys1BKHRKK-_zc2LF0WM9P6Y0xGPt/view?usp=drive_link",
     demoLabel: "실행하기",
     color: "gold",
     featured: true,

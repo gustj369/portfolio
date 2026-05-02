@@ -92,7 +92,7 @@ export default function Hero() {
                 <img
                   src="/hyeonseo.png"
                   alt="현서 프로필"
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-right"
                 />
               </div>
               <span className="text-xs font-mono text-gray-600 tracking-[0.2em]">@94hyeonseo</span>
@@ -120,7 +120,7 @@ export default function Hero() {
               <img
                 src="/hyeonseo.png"
                 alt="현서 프로필"
-                className="w-full object-cover object-center"
+                className="w-full object-cover object-right"
                 style={{ aspectRatio: "3 / 4", maxHeight: "320px" }}
               />
             </div>
