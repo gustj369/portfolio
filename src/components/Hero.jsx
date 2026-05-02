@@ -86,8 +86,20 @@ export default function Hero() {
               </a>
             </div>
 
+            {/* Mobile profile photo */}
+            <div className="flex md:hidden items-center gap-3 mt-8 mb-2">
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-gold-500/30 flex-shrink-0">
+                <img
+                  src="/hyeonseo.png"
+                  alt="현서 프로필"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+              <span className="text-xs font-mono text-gray-600 tracking-[0.2em]">@94hyeonseo</span>
+            </div>
+
             {/* Mobile stat pills */}
-            <div className="flex md:hidden gap-2.5 mt-10 flex-wrap">
+            <div className="flex md:hidden gap-2.5 mt-3 flex-wrap">
               {mobileStats.map((s) => (
                 <div
                   key={s.value}
@@ -108,7 +120,7 @@ export default function Hero() {
               <img
                 src="/hyeonseo.png"
                 alt="현서 프로필"
-                className="w-full object-cover object-top"
+                className="w-full object-cover object-center"
                 style={{ aspectRatio: "3 / 4", maxHeight: "320px" }}
               />
             </div>
