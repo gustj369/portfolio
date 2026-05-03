@@ -6,6 +6,10 @@
 const sharp = require('sharp');
 const path = require('path');
 
+// ⚠ Node 스크립트라 src/data/projects.js import 불가
+// meta.social.githubLabel 값과 동기화 필요
+const GITHUB_LABEL = "github.com/gustj369";
+
 const W = 1200;
 const H = 630;
 const PHOTO_W = 460;
@@ -80,7 +84,7 @@ const svgLeft = `
         font-size="12"
         fill="#8b6fe8"
         opacity="0.6"
-        letter-spacing="2">github.com/gustj369</text>
+        letter-spacing="2">${GITHUB_LABEL}</text>
 
   <!-- 하단 골드 라인 -->
   <rect x="80" y="${H - 92}" width="${W - 160}" height="1"

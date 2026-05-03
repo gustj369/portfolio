@@ -1,4 +1,4 @@
-import { writingTopics, getWritingMonths } from "../data/projects";
+import { writingTopics, getWritingMonths, meta } from "../data/projects";
 
 function WritingCard({ topic }) {
   const isGold   = topic.accent === "gold";
@@ -122,7 +122,7 @@ export default function Writing() {
           <div className="flex flex-col gap-2.5 flex-shrink-0">
             {/* Primary — Threads */}
             <a
-              href="https://www.threads.com/@94hyeonseo"
+              href={meta.social.threads}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400 hover:border-gold-500/50 text-gray-400 hover:text-gold-400 text-sm transition-all duration-200 hover:-translate-y-0.5"
@@ -134,7 +134,7 @@ export default function Writing() {
             </a>
             {/* Secondary — Instagram */}
             <a
-              href="https://www.instagram.com/94hyeonseo"
+              href={meta.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 hover:border-dark-300/60 text-gray-600 hover:text-gray-400 text-sm transition-all duration-200 hover:-translate-y-0.5"

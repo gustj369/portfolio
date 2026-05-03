@@ -1,4 +1,4 @@
-import { getWritingMonths } from "../data/projects";
+import { getWritingMonths, meta } from "../data/projects";
 
 export default function Hero() {
   const months = getWritingMonths();
@@ -74,7 +74,7 @@ export default function Hero() {
               </a>
               {/* Secondary */}
               <a
-                href="https://github.com/gustj369"
+                href={meta.social.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-dark-400/80 hover:border-gold-500/50 text-gray-400 hover:text-gold-400 text-sm font-medium rounded-lg transition-all duration-200 hover:-translate-y-0.5"
@@ -95,7 +95,7 @@ export default function Hero() {
                   className="w-full h-full object-cover object-right"
                 />
               </div>
-              <span className="text-xs font-mono text-gray-600 tracking-[0.2em]">@94hyeonseo</span>
+              <span className="text-xs font-mono text-gray-600 tracking-[0.2em]">{meta.social.handle}</span>
             </div>
 
             {/* Mobile stat pills */}
@@ -120,6 +120,8 @@ export default function Hero() {
               <img
                 src="/hyeonseo.png"
                 alt="현서 프로필"
+                width="260"
+                height="347"
                 className="w-full object-cover object-right"
                 style={{ aspectRatio: "3 / 4", maxHeight: "320px" }}
               />

@@ -1,5 +1,13 @@
 export const meta = {
   writingStartDate: "2025-08-01",
+  email: "gustj258@gmail.com",
+  social: {
+    github:      "https://github.com/gustj369",
+    instagram:   "https://www.instagram.com/94hyeonseo",
+    threads:     "https://www.threads.com/@94hyeonseo",
+    handle:      "@94hyeonseo",
+    githubLabel: "github.com/gustj369",
+  },
 };
 
 export function getWritingMonths() {
