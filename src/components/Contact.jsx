@@ -94,8 +94,8 @@ export default function Contact() {
                 </a>
               </div>
 
-              {/* Secondary — GitHub + SNS */}
-              <div className="flex flex-wrap gap-2.5">
+              {/* Secondary — GitHub (개발) */}
+              <div>
                 <a
                   href={meta.social.github}
                   target="_blank"
@@ -106,6 +106,10 @@ export default function Contact() {
                   <GitHubIcon />
                   GitHub 보기
                 </a>
+              </div>
+
+              {/* Secondary — SNS (wrap) */}
+              <div className="flex flex-wrap gap-2.5">
                 <a
                   href={meta.social.instagram}
                   target="_blank"
