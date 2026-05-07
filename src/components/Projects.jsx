@@ -50,14 +50,14 @@ function ProjectCard({ project }) {
     : "text-gray-100 group-hover:text-gold-400";
 
   const primaryHref = demo || github;
-  const showSecondaryGithub = !!demo && !isSlate;
+  const showSecondaryGithub = !!demo && !!github && !isSlate;
 
   return (
     <div className={`${cardBase} ${cardAccent}`}>
       {/* Status row */}
       <div className="flex items-center justify-between">
         <StatusPill status={status} />
-        {!isSlate && (
+        {!isSlate && !!github && (
           <a
             href={github}
             target="_blank"
