@@ -81,6 +81,7 @@ export default function Navbar() {
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2"
           aria-label="Toggle menu"
+          aria-expanded={menuOpen}
         >
           <span
             className={`block w-5 h-0.5 bg-gray-400 transition-all duration-300 ${

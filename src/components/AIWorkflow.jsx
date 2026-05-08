@@ -1,13 +1,6 @@
-import { workflowSteps } from "../data/projects";
+import { workflowSteps, workflowTools } from "../data/projects";
 
 const flowSteps = ["생각", "구조", "구현", "검증", "기록", "공개"];
-
-const tools = [
-  { name: "ChatGPT", role: "아이디어 정리 · 문장화" },
-  { name: "Codex",   role: "코드 구조 · 구현 보조" },
-  { name: "GitHub",  role: "버전 관리 · 공개" },
-  { name: "Figma",   role: "화면 설계 · 레이아웃" },
-];
 
 const resultProjects = [
   { name: "Legend League",             href: "#projects" },
@@ -60,7 +53,7 @@ export default function AIWorkflow() {
           </span>
           <div className="w-4 h-px bg-dark-500/60 mt-4 hidden sm:block" />
           <div className="flex gap-2.5 flex-wrap">
-            {tools.map((tool) => (
+            {workflowTools.map((tool) => (
               <div
                 key={tool.name}
                 className="px-3 py-2 rounded-lg border border-dark-400/50 bg-dark-800/40"

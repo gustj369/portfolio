@@ -225,3 +225,12 @@ export const workflowSteps = [
       "올리고 나서야 뭐가 부족한지 보였어요.\nGitHub와 포트폴리오에 결과물을 올리고, 부족한 부분은 다시 개선합니다.",
   },
 ];
+
+// AIWorkflow 섹션 전용 도구 목록
+// techStack의 AI WORKFLOW 항목과 별개 — 도구별 역할 설명(role)이 추가된 구조
+export const workflowTools = [
+  { name: "ChatGPT", role: "아이디어 정리 · 문장화" },
+  { name: "Codex",   role: "코드 구조 · 구현 보조" },
+  { name: "GitHub",  role: "버전 관리 · 공개" },
+  { name: "Figma",   role: "화면 설계 · 레이아웃" },
+];

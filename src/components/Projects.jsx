@@ -119,29 +119,31 @@ function ProjectCard({ project }) {
       <div className={`border-t ${isSlate ? "border-dark-600/30" : "border-dark-600/60"}`} />
 
       {/* Action links */}
-      <div className="flex items-center gap-5">
-        <a
-          href={primaryHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors duration-200 ${
-            isSlate ? "text-gray-500 hover:text-gray-300" : "text-gray-300 hover:text-gold-400"
-          }`}
-        >
-          {demoLabel || "자세히 보기"}
-          <ArrowIcon />
-        </a>
-        {showSecondaryGithub && (
+      {primaryHref && (
+        <div className="flex items-center gap-5">
           <a
-            href={github}
+            href={primaryHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-gray-400 transition-colors duration-200"
+            className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors duration-200 ${
+              isSlate ? "text-gray-500 hover:text-gray-300" : "text-gray-300 hover:text-gold-400"
+            }`}
           >
-            코드 보기
+            {demoLabel || "자세히 보기"}
+            <ArrowIcon />
           </a>
-        )}
-      </div>
+          {showSecondaryGithub && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-gray-400 transition-colors duration-200"
+            >
+              코드 보기
+            </a>
+          )}
+        </div>
+      )}
     </div>
   );
 }
