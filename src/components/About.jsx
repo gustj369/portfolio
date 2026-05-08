@@ -1,19 +1,4 @@
-const identityTags = [
-  { label: "개발자", accent: "gold" },
-  { label: "AI 워크플로우 빌더", accent: "violet" },
-  { label: "콘텐츠 크리에이터", accent: null },
-  { label: "작은 서비스를 만드는 사람", accent: null },
-  { label: "기록하는 사람", accent: null },
-];
-
-const focusAreas = [
-  "AI 활용과 자동화 도구",
-  "미니게임 제작과 배포",
-  "개인 자산 대시보드",
-  "개인 지식관리 앱과 생산성 시스템",
-  "인스타 카드뉴스 콘텐츠",
-  "글쓰기와 생각 정리",
-];
+import { identityTags, focusAreas } from "../data/projects";
 
 function IdentityTag({ label, accent }) {
   const cls =

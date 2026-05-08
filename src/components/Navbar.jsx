@@ -20,7 +20,8 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sectionIds = navLinks.map((l) => l.href.slice(1));
+    // "hero"는 navLinks에 없으므로 표시되지 않지만, 최상단 스크롤 시 activeSection을 초기화하기 위해 관찰
+    const sectionIds = ["hero", ...navLinks.map((l) => l.href.slice(1))];
     const observers = [];
 
     sectionIds.forEach((id) => {
