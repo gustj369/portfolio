@@ -16,7 +16,8 @@ const statusConfig = {
   Playable:  "text-gold-400 border-gold-500/30 bg-gold-500/8",
   Live:      "text-gold-400 border-gold-500/30 bg-gold-500/8",
   Completed: "text-gold-400 border-gold-500/30 bg-gold-500/8",
-  Prototype: "text-violet-400 border-violet-500/30 bg-violet-500/8",
+  Prototype:   "text-violet-400 border-violet-500/30 bg-violet-500/8",
+  "In Progress": "text-violet-400 border-violet-500/30 bg-violet-500/8",
   Archive:   "text-gray-500 border-dark-400 bg-dark-600/30",
 };
 
@@ -155,11 +156,16 @@ export default function Projects() {
         <div className="section-divider mb-10" />
 
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
-          <h2 className="text-3xl md:text-4xl font-semibold leading-snug">
-            직접 만든
-            <br />
-            <span className="text-gradient-gold">작은 결과물들</span>
-          </h2>
+          <div>
+            <h2 className="text-3xl md:text-4xl font-semibold leading-snug">
+              직접 만든
+              <br />
+              <span className="text-gradient-gold">작은 결과물들</span>
+            </h2>
+            <p className="mt-3 text-xs font-mono text-gray-600 tracking-widest">
+              Live 3 · Playable 1 · In Progress 1
+            </p>
+          </div>
           <p className="text-sm text-gray-500 max-w-xs md:text-right leading-relaxed">
             아이디어에서 멈추지 않고,
             <br />

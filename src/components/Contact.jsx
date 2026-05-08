@@ -68,7 +68,7 @@ export default function Contact() {
             {/* Body copy */}
             <div className="space-y-3 text-gray-400 text-base leading-relaxed mb-3">
               <p>
-                작은 아이디어를 웹사이트, 콘텐츠, AI 활용 도구로 구현하는 일을 좋아합니다.
+                같이 작게 시작해서 실제로 돌아가는 걸 만드는 과정을 좋아해요.
                 <br className="hidden sm:block" />
                 포트폴리오, 사이드 프로젝트, 콘텐츠 실험, AI 워크플로우에 대한
                 이야기를 열어두고 있습니다.
@@ -92,6 +92,9 @@ export default function Contact() {
                   <MailIcon />
                   메일로 연락하기
                 </a>
+                <p className="mt-2 text-sm font-mono text-gray-500">
+                  {meta.email}
+                </p>
               </div>
 
               {/* Secondary — GitHub (개발) */}
@@ -153,10 +156,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Email hint */}
-            <p className="mt-4 text-xs font-mono text-gray-700">
-              {meta.email}
-            </p>
           </div>
 
           {/* Right: OPEN TO card */}

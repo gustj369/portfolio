@@ -79,14 +79,19 @@ export default function Writing() {
         <div className="section-divider mb-10" />
 
         {/* Headline */}
-        <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-5">
+        <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-3">
           <span className="text-gradient-gold">{months}개월</span>의 기록이
           <br />
           저를 바꿨습니다.
         </h2>
 
+        {/* Subtext */}
+        <p className="text-sm text-gray-600 leading-relaxed mb-6">
+          드라마틱 라이프(@94hyeonseo) — 평범한 직장인의 하루를 조금 더 솔직하게 남기는 기록입니다.
+        </p>
+
         {/* Body copy */}
-        <div className="text-sm text-gray-400 leading-relaxed max-w-xl mb-8">
+        <div className="text-sm text-gray-400 leading-relaxed max-w-xl mb-10">
           <p>
             퇴근 후에도 글을 쓰고, AI로 실험하며,
             <br />
@@ -94,20 +99,14 @@ export default function Writing() {
           </p>
         </div>
 
-        {/* DRAMATIC LIFE callout */}
-        <div className="mb-12 px-4 py-3.5 rounded-xl border border-dark-500/40 bg-dark-800/30 max-w-sm">
-          <p className="text-[10px] font-mono text-gray-700 tracking-[0.25em] mb-1.5">
-            DRAMATIC LIFE
-          </p>
-          <p className="text-xs text-gray-500 leading-relaxed">
-            평범한 직장인의 하루를
-            다른 시선으로 바라보는 기록입니다.
-          </p>
+        {/* Featured card — 직장인 성장 (full width) */}
+        <div className="mb-4">
+          <WritingCard topic={writingTopics[0]} />
         </div>
 
-        {/* Topic cards — 3-col desktop, 2-col tablet, 1-col mobile */}
+        {/* Topic cards — remaining 5, 3-col desktop, 2-col tablet, 1-col mobile */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
-          {writingTopics.map((topic) => (
+          {writingTopics.slice(1).map((topic) => (
             <WritingCard key={topic.title} topic={topic} />
           ))}
         </div>

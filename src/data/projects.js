@@ -55,7 +55,7 @@ export const projects = [
   {
     id: 3,
     title: "Second Brain Desktop",
-    status: "Prototype",
+    status: "In Progress",
     sublabel: "생각과 기록을 연결하는 개인 지식관리 앱",
     description:
       "기록은 많은데 다시 꺼내 쓴 적이 없었어요. 흩어진 메모가 연결되는 구조를 실험하고 있습니다.",
@@ -199,7 +199,7 @@ export const workflowSteps = [
     step: "02",
     title: "구조 설계",
     description:
-      "Codex와 함께 초기 구조를 만들고, 필요한 기능의 흐름을 먼저 잡습니다.",
+      "구조 없이 만들다가 절반에서 다시 짠 적이 있어요.\n지금은 Codex와 함께 초기 구조를 먼저 잡습니다.",
   },
   {
     step: "03",
@@ -217,12 +217,12 @@ export const workflowSteps = [
     step: "05",
     title: "기록과 문서화",
     description:
-      "README, 사용 설명, 제작 과정을 정리하고 다음 개선 지점을 남깁니다.",
+      "나중에 보면 내가 왜 이렇게 짰는지 모르겠더라고요.\n그래서 README, 사용 설명, 제작 과정을 정리하고 다음 개선 지점을 남깁니다.",
   },
   {
     step: "06",
     title: "공개와 개선",
     description:
-      "GitHub와 포트폴리오에 결과물을 올리고, 부족한 부분은 다시 개선합니다.",
+      "올리고 나서야 뭐가 부족한지 보였어요.\nGitHub와 포트폴리오에 결과물을 올리고, 부족한 부분은 다시 개선합니다.",
   },
 ];

@@ -51,7 +51,7 @@ export default function Hero() {
               <br />
               <span className="text-gradient-gold">아이디어 5개.</span>
               <br />
-              실제로 작동하는 결과물.
+              <span className="whitespace-nowrap">실제로 작동하는 결과물.</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-400 leading-relaxed mb-10 animate-slide-up">
