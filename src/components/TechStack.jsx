@@ -95,9 +95,9 @@ export default function TechStack() {
                 CURRENTLY EXPLORING
               </p>
               <p className="text-sm text-gray-500 leading-relaxed">
-                화면 설계와 게임 제작 흐름을 익히며
+                지금은 Figma로 화면을 먼저 그리고 코딩하는 순서를 실험 중이에요.
                 <br />
-                작은 프로젝트의 완성도를 높이고 있습니다.
+                게임 만드는 건 아직 어렵고요. 그래도 계속하고 있습니다.
               </p>
             </div>
 

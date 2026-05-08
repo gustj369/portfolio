@@ -28,7 +28,7 @@ export const projects = [
     status: "Playable",
     sublabel: "직접 만든 리그형 전략 미니게임",
     description:
-      "리그 운영과 경기 결과를 직접 구성하는 전략 미니게임입니다. JavaScript로 경기 진행, 결과 계산, 리그 흐름을 구현했고 실행 가능한 파일로 패키징했습니다.",
+      "리그를 직접 운영하고 싶었는데 마땅한 도구가 없었어요. 그래서 만들었습니다. JavaScript로 경기 진행, 결과 계산, 리그 흐름을 구현했고 실행 가능한 파일로 패키징했습니다.",
     keyBuild: "경기 흐름 · 결과 계산 · EXE 패키징",
     tags: ["JavaScript", "Mini Game", "League System"],
     github: "https://github.com/gustj369/my-starleague",
@@ -43,7 +43,7 @@ export const projects = [
     status: "Live",
     sublabel: "내 자산 흐름을 한눈에 보는 대시보드",
     description:
-      "개인 자산의 흐름, 수익률, 배분 비율을 한 화면에서 확인하기 위해 만든 자산 관리 대시보드입니다. 숫자를 단순히 기록하는 데서 끝내지 않고, 투자 판단을 돕는 화면 구조를 실험했습니다.",
+      "숫자만 기록하다 보니 정작 판단이 안 됐어요. 한눈에 보이는 구조가 필요했습니다. 자산의 흐름, 수익률, 배분 비율을 한 화면에서 확인할 수 있도록 만들었습니다.",
     keyBuild: "자산 흐름 · 수익률 · 배분 시각화",
     tags: ["Dashboard", "Finance", "Data Visualization"],
     github: "https://github.com/gustj369/portfolio-report",
@@ -58,7 +58,7 @@ export const projects = [
     status: "Prototype",
     sublabel: "생각과 기록을 연결하는 개인 지식관리 앱",
     description:
-      "독서 기록, 아이디어, 콘텐츠 글감을 한곳에 연결해 관리하기 위한 개인 지식관리 데스크톱 앱입니다. 흩어진 기록을 다시 꺼내 쓸 수 있는 구조를 실험하고 있습니다.",
+      "기록은 많은데 다시 꺼내 쓴 적이 없었어요. 흩어진 메모가 연결되는 구조를 실험하고 있습니다.",
     keyBuild: "기록 연결 · 지식관리 구조 · 데스크톱 앱",
     tags: ["Desktop", "Knowledge Management", "Productivity"],
     github: "https://github.com/gustj369/second-brain-desktop",
@@ -146,7 +146,7 @@ export const writingTopics = [
   {
     icon: "↗",
     title: "직장인 성장",
-    description: "퇴근 후의 공부, 운동, 기록처럼 작은 루틴이 사람을 어떻게 바꾸는지 씁니다.",
+    description: "퇴근 후의 공부, 운동, 기록처럼 작은 루틴이 사람을 어떻게 바꾸는지 씁니다. 월요일 아침마다 그만두고 싶었던 이유도요.",
     tags: ["Routine", "Growth"],
     accent: "gold",
   },
@@ -160,7 +160,7 @@ export const writingTopics = [
   {
     icon: "○",
     title: "퇴근 후 공부",
-    description: "지친 하루 끝에서도 다시 시작할 수 있는 작은 공부 방식과 실패의 이유를 정리합니다.",
+    description: "피곤할 때 공부를 다시 시작하는 방법은 딱 하나였어요. 그 이야기를 씁니다.",
     tags: ["Study", "After Work"],
     accent: null,
   },
@@ -193,7 +193,7 @@ export const workflowSteps = [
     step: "01",
     title: "아이디어 정리",
     description:
-      "막연한 생각을 기능, 화면, 콘텐츠 단위로 나눕니다.",
+      "처음엔 바로 코딩부터 했다가 중간에 방향을 잃었어요. 지금은 막연한 생각을 기능, 화면, 콘텐츠 단위로 먼저 나눕니다.",
   },
   {
     step: "02",
@@ -211,7 +211,7 @@ export const workflowSteps = [
     step: "04",
     title: "기능 단위 개선",
     description:
-      "한 번에 크게 바꾸기보다, 작은 단위로 요청하고 수정하며 완성도를 높입니다.",
+      "한 번에 다 바꾸려다 다 망가뜨린 적이 있어요. 지금은 작은 단위로 요청하고, 수정하며 완성도를 높입니다.",
   },
   {
     step: "05",

@@ -47,17 +47,15 @@ export default function Hero() {
             </p>
 
             <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[3.5rem] font-semibold leading-[1.15] tracking-tight mb-7 animate-slide-up">
-              작은 아이디어를
+              퇴근 후 9개월.
               <br />
-              <span className="text-gradient-gold">AI와 코드로</span>
+              <span className="text-gradient-gold">아이디어 5개.</span>
               <br />
-              실제 결과물로 만듭니다.
+              실제로 작동하는 결과물.
             </h1>
 
             <p className="text-base md:text-lg text-gray-400 leading-relaxed mb-10 animate-slide-up">
-              코드와 콘텐츠, 일상의 아이디어를 연결해
-              <br className="hidden sm:block" />
-              작게 만들고, 직접 써보고, 계속 개선합니다.
+              어떻게 만들었는지, 아래에서 확인해보세요.
             </p>
 
             {/* CTA buttons */}

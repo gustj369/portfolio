@@ -48,10 +48,9 @@ export default function About() {
             </h2>
             <div className="space-y-5 text-gray-400 text-base leading-relaxed">
               <p>
-                AI를 단순히 사용하는 데서 멈추지 않고,
+                완벽해질 때까지 미루다가 아무것도 안 만들었던 적이 있어요.
                 <br />
-                개발과 콘텐츠 제작 과정에 연결해
-                실제로 작동하는 결과물로 만듭니다.
+                그때부터 방식을 바꿨습니다.
               </p>
               <p>
                 Codex로 코드의 구조를 잡고, ChatGPT로 아이디어와 문장을 정리하며,
