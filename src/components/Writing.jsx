@@ -67,6 +67,8 @@ function WritingCard({ topic }) {
 
 export default function Writing() {
   const months = getWritingMonths();
+  const featuredTopic = writingTopics.find((t) => t.featured);
+  const restTopics = writingTopics.filter((t) => !t.featured);
 
   return (
     <section id="writing" className="py-24 md:py-32 px-6">
@@ -99,14 +101,16 @@ export default function Writing() {
           </p>
         </div>
 
-        {/* Featured card — 직장인 성장 (full width) */}
-        <div className="mb-4">
-          <WritingCard topic={writingTopics[0]} />
-        </div>
+        {/* Featured card — full width */}
+        {featuredTopic && (
+          <div className="mb-4">
+            <WritingCard topic={featuredTopic} />
+          </div>
+        )}
 
-        {/* Topic cards — remaining 5, 3-col desktop, 2-col tablet, 1-col mobile */}
+        {/* Topic cards — remaining, 3-col desktop, 2-col tablet, 1-col mobile */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
-          {writingTopics.slice(1).map((topic) => (
+          {restTopics.map((topic) => (
             <WritingCard key={topic.title} topic={topic} />
           ))}
         </div>

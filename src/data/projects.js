@@ -13,12 +13,10 @@ export const meta = {
 };
 
 export function getWritingMonths() {
-  const start = new Date(meta.writingStartDate);
+  // YYYY-MM-DD 형식을 직접 파싱하여 타임존 오프셋 영향을 제거
+  const [sy, sm] = meta.writingStartDate.split("-").map(Number);
   const now = new Date();
-  return (
-    (now.getFullYear() - start.getFullYear()) * 12 +
-    (now.getMonth() - start.getMonth())
-  );
+  return (now.getFullYear() - sy) * 12 + (now.getMonth() - (sm - 1));
 }
 
 export const projects = [
@@ -149,6 +147,7 @@ export const writingTopics = [
     description: "퇴근 후의 공부, 운동, 기록처럼 작은 루틴이 사람을 어떻게 바꾸는지 씁니다. 월요일 아침마다 그만두고 싶었던 이유도요.",
     tags: ["Routine", "Growth"],
     accent: "gold",
+    featured: true,
   },
   {
     icon: "◎",
