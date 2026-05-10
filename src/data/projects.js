@@ -30,7 +30,7 @@ export const projects = [
     keyBuild: "경기 흐름 · 결과 계산 · EXE 패키징",
     tags: ["JavaScript", "Mini Game", "League System"],
     github: "https://github.com/gustj369/my-starleague",
-    demo: "https://drive.google.com/file/d/119k7ys1BKHRKK-_zc2LF0WM9P6Y0xGPt/view?usp=drive_link",
+    demo: "https://drive.google.com/file/d/1Rz8TKBNwSvlWhcNDvtXXFGoOgSWuIzz4/view?usp=drive_link",
     demoLabel: "실행하기",
     color: "gold",
     featured: true,
@@ -226,6 +226,8 @@ export const workflowSteps = [
   },
 ];
 
+export const flowSteps = ["생각", "구조", "구현", "검증", "기록", "공개"];
+
 // AIWorkflow 섹션 전용 도구 목록
 // techStack의 AI WORKFLOW 항목과 별개 — 도구별 역할 설명(role)이 추가된 구조
 export const workflowTools = [
@@ -233,6 +235,12 @@ export const workflowTools = [
   { name: "Codex",   role: "코드 구조 · 구현 보조" },
   { name: "GitHub",  role: "버전 관리 · 공개" },
   { name: "Figma",   role: "화면 설계 · 레이아웃" },
+];
+
+export const workflowResultProjects = [
+  { name: "Legend League",             href: "#projects" },
+  { name: "Asset Portfolio Dashboard", href: "#projects" },
+  { name: "DEV·CREATOR Portfolio",     href: "#projects" },
 ];
 
 // About 섹션 데이터
@@ -251,4 +259,18 @@ export const focusAreas = [
   "개인 지식관리 앱과 생산성 시스템",
   "인스타 카드뉴스 콘텐츠",
   "글쓰기와 생각 정리",
+];
+
+export const currentlyExploring = {
+  title: "CURRENTLY EXPLORING",
+  description: "지금은 Figma로 화면을 먼저 그리고 코딩하는 순서를 실험 중이에요.\n게임 만드는 건 아직 어렵고요. 그래도 계속하고 있습니다.",
+  items: ["Figma", "Game Dev"],
+};
+
+export const openToItems = [
+  "Portfolio",
+  "Side Project",
+  "AI Workflow",
+  "Automation",
+  "Content System",
 ];
