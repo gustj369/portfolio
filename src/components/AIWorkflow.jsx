@@ -1,12 +1,4 @@
-import { workflowSteps, workflowTools } from "../data/projects";
-
-const flowSteps = ["생각", "구조", "구현", "검증", "기록", "공개"];
-
-const resultProjects = [
-  { name: "Legend League",             href: "#projects" },
-  { name: "Asset Portfolio Dashboard", href: "#projects" },
-  { name: "DEV·CREATOR Portfolio",     href: "#projects" },
-];
+import { flowSteps, workflowResultProjects, workflowSteps, workflowTools } from "../data/projects";
 
 export default function AIWorkflow() {
   return (
@@ -104,7 +96,7 @@ export default function AIWorkflow() {
           </span>
           <div className="w-3 h-px bg-dark-500/60 hidden sm:block" />
           <div className="flex gap-2 flex-wrap">
-            {resultProjects.map((p) => (
+            {workflowResultProjects.map((p) => (
               <a
                 key={p.name}
                 href={p.href}

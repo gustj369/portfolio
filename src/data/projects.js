@@ -74,8 +74,14 @@ export const projects = [
     keyBuild: "AI 영상 · 캐릭터 고정 · 실전 가이드 PDF",
     tags: ["AI", "Video", "Character", "PDF"],
     github: null,
-    demo: "https://drive.google.com/file/d/1rYThx0thLB4O8IHQDhlbaMuPm77BWRo5/view?usp=drive_link",
+    demo: "https://drive.google.com/file/d/13uu992m6ACvNXPj4TuIPK5EN1FcxIAOS/view?usp=drive_link",
     demoLabel: "PDF 보기",
+    extraLinks: [
+      {
+        href: "https://drive.google.com/file/d/1SUiIRC822KPhJpXWw3h2mVLr07V6wJ2A/view?usp=drive_link",
+        label: "워크북 보기",
+      },
+    ],
     color: "violet",
   },
   {

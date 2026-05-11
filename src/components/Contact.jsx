@@ -1,49 +1,12 @@
-import { meta } from "../data/projects";
-
-const GitHubIcon = () => (
-  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-  </svg>
-);
-
-const MailIcon = () => (
-  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
-      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-  </svg>
-);
-
-const InstagramIcon = () => (
-  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-  </svg>
-);
-
-const ThreadsIcon = () => (
-  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.852 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.783 3.631 2.698 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 012.076.175V12c0-.91-.244-1.612-.753-2.129-.51-.517-1.24-.78-2.211-.801-1.275.025-2.22.625-2.67 1.478l-1.776-1.075c.713-1.348 2.105-2.157 3.976-2.226 1.64.001 2.98.489 3.908 1.41.903.896 1.372 2.16 1.372 3.68v.1c.493.23.96.497 1.393.806 1.34.96 2.152 2.336 2.43 3.907.375 2.104-.175 4.29-1.647 5.96-1.701 1.93-4.137 2.836-7.36 2.86h-.007z" />
-  </svg>
-);
-
-const XIcon = () => (
-  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-  </svg>
-);
-
-const LinkedInIcon = () => (
-  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-  </svg>
-);
-
-const openToItems = [
-  "Portfolio",
-  "Side Project",
-  "AI Workflow",
-  "Automation",
-  "Content System",
-];
+import { meta, openToItems } from "../data/projects";
+import {
+  GitHubIcon,
+  InstagramIcon,
+  LinkedInIcon,
+  MailIcon,
+  ThreadsIcon,
+  XIcon,
+} from "./icons";
 
 export default function Contact() {
   return (
@@ -84,75 +47,89 @@ export default function Contact() {
 
               {/* Primary — Email */}
               <div>
-                <a
-                  href={`mailto:${meta.email}`}
-                  aria-label={`메일로 연락하기: ${meta.email}`}
-                  className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl border border-gold-500/50 text-gold-400 text-sm hover:border-gold-400 hover:bg-gold-500/8 hover:shadow-[0_0_16px_rgba(212,168,67,0.12)] transition-all duration-200 hover:-translate-y-0.5"
-                >
-                  <MailIcon />
-                  메일로 연락하기
-                </a>
-                <p className="mt-2 text-sm font-mono text-gray-500">
-                  {meta.email}
-                </p>
+                {meta.email && (
+                  <>
+                    <a
+                      href={`mailto:${meta.email}`}
+                      aria-label={`메일로 연락하기: ${meta.email}`}
+                      className="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl border border-gold-500/50 text-gold-400 text-sm hover:border-gold-400 hover:bg-gold-500/8 hover:shadow-[0_0_16px_rgba(212,168,67,0.12)] transition-all duration-200 hover:-translate-y-0.5"
+                    >
+                      <MailIcon />
+                      메일로 연락하기
+                    </a>
+                    <p className="mt-2 text-sm font-mono text-gray-500">
+                      {meta.email}
+                    </p>
+                  </>
+                )}
               </div>
 
               {/* Secondary — GitHub (개발) */}
-              <div>
-                <a
-                  href={meta.social.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="GitHub 보기"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400 text-gray-400 text-sm hover:border-gold-500/40 hover:text-gold-400 transition-all duration-200 hover:-translate-y-0.5"
-                >
-                  <GitHubIcon />
-                  GitHub 보기
-                </a>
-              </div>
+              {meta.social.github && (
+                <div>
+                  <a
+                    href={meta.social.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub 보기"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400 text-gray-400 text-sm hover:border-gold-500/40 hover:text-gold-400 transition-all duration-200 hover:-translate-y-0.5"
+                  >
+                    <GitHubIcon />
+                    GitHub 보기
+                  </a>
+                </div>
+              )}
 
               {/* Secondary — SNS (wrap) */}
               <div className="flex flex-wrap gap-2.5">
-                <a
-                  href={meta.social.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram 보기"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
-                >
-                  <InstagramIcon />
-                  Instagram 보기
-                </a>
-                <a
-                  href={meta.social.threads}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Threads 보기"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
-                >
-                  <ThreadsIcon />
-                  Threads 보기
-                </a>
-                <a
-                  href={meta.social.x}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="X 보기"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
-                >
-                  <XIcon />
-                  X 보기
-                </a>
-                <a
-                  href={meta.social.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LinkedIn 보기"
-                  className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
-                >
-                  <LinkedInIcon />
-                  LinkedIn 보기
-                </a>
+                {meta.social.instagram && (
+                  <a
+                    href={meta.social.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram 보기"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
+                  >
+                    <InstagramIcon />
+                    Instagram 보기
+                  </a>
+                )}
+                {meta.social.threads && (
+                  <a
+                    href={meta.social.threads}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Threads 보기"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
+                  >
+                    <ThreadsIcon />
+                    Threads 보기
+                  </a>
+                )}
+                {meta.social.x && (
+                  <a
+                    href={meta.social.x}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="X 보기"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
+                  >
+                    <XIcon />
+                    X 보기
+                  </a>
+                )}
+                {meta.social.linkedin && (
+                  <a
+                    href={meta.social.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn 보기"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
+                  >
+                    <LinkedInIcon />
+                    LinkedIn 보기
+                  </a>
+                )}
               </div>
             </div>
 

@@ -1,17 +1,19 @@
-import { getWritingMonths, meta } from "../data/projects";
+import { getWritingMonths, meta, projects } from "../data/projects";
+import { ArrowRightIcon, ChevronDownIcon, GitHubIcon } from "./icons";
 
 export default function Hero() {
   const months = getWritingMonths();
+  const visibleProjectCount = projects.filter((project) => project.status !== "Archive").length;
 
   const statCards = [
     { value: `${months} MONTHS`, label: "퇴근 후 쌓은 기록",          mono: true  },
-    { value: "5 PROJECTS",       label: "직접 만들고 개선한 결과물",   mono: true  },
+    { value: `${visibleProjectCount} PROJECTS`, label: "직접 만들고 개선한 결과물",   mono: true  },
     { value: "AI WORKFLOW",      label: "ChatGPT · Codex · GitHub",   mono: false },
   ];
 
   const mobileStats = [
     { value: `${months} MONTHS`, label: "퇴근 후 기록" },
-    { value: "5 PROJECTS",       label: "결과물"       },
+    { value: `${visibleProjectCount} PROJECTS`, label: "결과물"       },
     { value: "AI WORKFLOW",      label: null           },
   ];
 
@@ -49,7 +51,7 @@ export default function Hero() {
             <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[3.5rem] font-semibold leading-[1.15] tracking-tight mb-7 animate-slide-up">
               퇴근 후 9개월.
               <br />
-              <span className="text-gradient-gold">아이디어 5개.</span>
+              <span className="text-gradient-gold">아이디어 {visibleProjectCount}개.</span>
               <br />
               <span className="whitespace-nowrap">실제로 작동하는 결과물.</span>
             </h1>
@@ -66,22 +68,20 @@ export default function Hero() {
                 className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold-500 hover:bg-gold-400 text-dark-900 text-sm font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(212,168,67,0.28)]"
               >
                 프로젝트 보기
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                <ArrowRightIcon />
               </a>
               {/* Secondary */}
-              <a
-                href={meta.social.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-dark-400/80 hover:border-gold-500/50 text-gray-400 hover:text-gold-400 text-sm font-medium rounded-lg transition-all duration-200 hover:-translate-y-0.5"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-                </svg>
-                GitHub 보기
-              </a>
+              {meta.social.github && (
+                <a
+                  href={meta.social.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-dark-400/80 hover:border-gold-500/50 text-gray-400 hover:text-gold-400 text-sm font-medium rounded-lg transition-all duration-200 hover:-translate-y-0.5"
+                >
+                  <GitHubIcon />
+                  GitHub 보기
+                </a>
+              )}
             </div>
 
             {/* Mobile profile photo */}
@@ -160,14 +160,7 @@ export default function Hero() {
         >
           SCROLL
         </span>
-        <svg
-          className="w-3 h-3 text-gold-500 animate-scroll-drop"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
-        </svg>
+        <ChevronDownIcon className="w-3 h-3 text-gold-500 animate-scroll-drop" />
       </div>
     </section>
   );

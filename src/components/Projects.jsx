@@ -1,16 +1,5 @@
 import { projects } from "../data/projects";
-
-const GitHubIcon = () => (
-  <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
-  </svg>
-);
-
-const ArrowIcon = () => (
-  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-  </svg>
-);
+import { ArrowRightIcon, GitHubIcon } from "./icons";
 
 const statusConfig = {
   Playable:  "text-gold-400 border-gold-500/30 bg-gold-500/8",
@@ -31,7 +20,20 @@ function StatusPill({ status }) {
 }
 
 function ProjectCard({ project }) {
-  const { featured, color, status, title, sublabel, description, keyBuild, tags, github, demo, demoLabel } = project;
+  const {
+    featured,
+    color,
+    status = "Archive",
+    title,
+    sublabel,
+    description,
+    keyBuild,
+    tags = [],
+    github,
+    demo,
+    demoLabel,
+    extraLinks = [],
+  } = project;
   const isSlate = color === "slate";
   const isViolet = color === "violet";
 
@@ -51,6 +53,7 @@ function ProjectCard({ project }) {
     : "text-gray-100 group-hover:text-gold-400";
 
   const primaryHref = demo || github;
+  const hasActionLinks = !!primaryHref || extraLinks.length > 0;
   const showSecondaryGithub = !!demo && !!github && !isSlate;
 
   return (
@@ -66,7 +69,7 @@ function ProjectCard({ project }) {
             aria-label={`View ${title} on GitHub`}
             className="p-1.5 rounded-lg border border-dark-400 hover:border-gold-500/60 text-gray-500 hover:text-gold-400 transition-all duration-200"
           >
-            <GitHubIcon />
+            <GitHubIcon className="w-3.5 h-3.5" />
           </a>
         )}
       </div>
@@ -119,19 +122,32 @@ function ProjectCard({ project }) {
       <div className={`border-t ${isSlate ? "border-dark-600/30" : "border-dark-600/60"}`} />
 
       {/* Action links */}
-      {primaryHref && (
+      {hasActionLinks && (
         <div className="flex items-center gap-5">
-          <a
-            href={primaryHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors duration-200 ${
-              isSlate ? "text-gray-500 hover:text-gray-300" : "text-gray-300 hover:text-gold-400"
-            }`}
-          >
-            {demoLabel || "자세히 보기"}
-            <ArrowIcon />
-          </a>
+          {primaryHref && (
+            <a
+              href={primaryHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors duration-200 ${
+                isSlate ? "text-gray-500 hover:text-gray-300" : "text-gray-300 hover:text-gold-400"
+              }`}
+            >
+              {demoLabel || "자세히 보기"}
+              <ArrowRightIcon className="w-3 h-3" />
+            </a>
+          )}
+          {extraLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-gray-400 transition-colors duration-200"
+            >
+              {link.label}
+            </a>
+          ))}
           {showSecondaryGithub && (
             <a
               href={github}
@@ -149,6 +165,19 @@ function ProjectCard({ project }) {
 }
 
 export default function Projects() {
+  const statusOrder = ["Live", "Playable", "In Progress", "Prototype", "Completed"];
+  const statusSummary = projects
+    .filter((project) => project.status && project.status !== "Archive")
+    .reduce((summary, project) => {
+      summary[project.status] = (summary[project.status] || 0) + 1;
+      return summary;
+    }, {});
+
+  const statusSummaryText = statusOrder
+    .filter((status) => statusSummary[status])
+    .map((status) => `${status} ${statusSummary[status]}`)
+    .join(" · ") || "Archive only";
+
   return (
     <section id="projects" className="py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
@@ -165,7 +194,7 @@ export default function Projects() {
               <span className="text-gradient-gold">작은 결과물들</span>
             </h2>
             <p className="mt-3 text-xs font-mono text-gray-600 tracking-widest">
-              Live 3 · Playable 1 · In Progress 1
+              {statusSummaryText}
             </p>
           </div>
           <p className="text-sm text-gray-500 max-w-xs md:text-right leading-relaxed">

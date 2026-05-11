@@ -1,4 +1,4 @@
-import { techStack } from "../data/projects";
+import { currentlyExploring, techStack } from "../data/projects";
 
 const labelColors = {
   gold:   "text-gold-400",
@@ -28,6 +28,9 @@ function TagItem({ name, highlighted, color }) {
 }
 
 function StackCard({ stack }) {
+  const items = stack.items || [];
+  const highlight = stack.highlight || [];
+
   return (
     <div className="card-dark rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 group hover:-translate-y-0.5">
       {/* Category label */}
@@ -42,11 +45,11 @@ function StackCard({ stack }) {
 
       {/* Tags */}
       <div className="flex flex-wrap gap-2">
-        {stack.items.map((item) => (
+        {items.map((item) => (
           <TagItem
             key={item}
             name={item}
-            highlighted={stack.highlight.includes(item)}
+            highlighted={highlight.includes(item)}
             color={stack.color}
           />
         ))}
@@ -71,18 +74,21 @@ export default function TechStack() {
             {/* Left: label + description */}
             <div className="sm:w-72 flex-shrink-0">
               <p className="text-xs font-mono text-violet-400 tracking-widest mb-2.5">
-                CURRENTLY EXPLORING
+                {currentlyExploring.title}
               </p>
               <p className="text-sm text-gray-500 leading-relaxed">
-                지금은 Figma로 화면을 먼저 그리고 코딩하는 순서를 실험 중이에요.
-                <br />
-                게임 만드는 건 아직 어렵고요. 그래도 계속하고 있습니다.
+                {currentlyExploring.description.split("\n").map((line, index) => (
+                  <span key={`${index}-${line}`}>
+                    {index > 0 && <br />}
+                    {line}
+                  </span>
+                ))}
               </p>
             </div>
 
             {/* Right: tags */}
             <div className="flex flex-wrap gap-2 sm:pt-0.5">
-              {["Figma", "Game Dev"].map((item) => (
+              {currentlyExploring.items.map((item) => (
                 <span
                   key={item}
                   className="px-2.5 py-1 text-xs font-mono rounded-lg border border-violet-500/25 bg-violet-500/5 text-violet-400/80 group-hover:border-violet-500/45 group-hover:text-violet-300 transition-colors duration-200"
