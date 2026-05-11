@@ -143,7 +143,7 @@ function ProjectCard({ project }) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-gray-400 transition-colors duration-200"
+              className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-gray-200 transition-colors duration-200"
             >
               {link.label}
             </a>
