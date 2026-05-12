@@ -25,8 +25,8 @@ export default function AIWorkflow() {
         </div>
 
         {/* Flow pill */}
-        <div className="flex items-center gap-1.5 mb-8 flex-wrap">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-dark-400/50 bg-dark-800/30">
+        <div className="mb-8">
+          <div className="inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1.5 px-3.5 py-1.5 rounded-lg border border-dark-400/50 bg-dark-800/30">
             {flowSteps.map((step, i) => (
               <span key={step} className="inline-flex items-center gap-2">
                 <span className="text-xs font-mono text-gray-500">{step}</span>

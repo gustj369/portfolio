@@ -37,7 +37,7 @@ function ProjectCard({ project }) {
   const isSlate = color === "slate";
   const isViolet = color === "violet";
 
-  const cardBase = "rounded-2xl p-6 flex flex-col gap-3.5 border transition-all duration-300 group hover:-translate-y-1";
+  const cardBase = "rounded-2xl p-5 sm:p-6 flex flex-col gap-3 sm:gap-3.5 border transition-all duration-300 group hover:-translate-y-1";
   const cardAccent = featured
     ? "border-gold-500/25 bg-dark-800/60 hover:border-gold-500/45 hover:shadow-[0_0_24px_rgba(212,168,67,0.07)]"
     : isSlate
@@ -89,7 +89,7 @@ function ProjectCard({ project }) {
       )}
 
       {/* Description */}
-      <p className={`text-sm leading-relaxed flex-1 ${isSlate ? "text-gray-600" : "text-gray-500"}`}>
+      <p className={`text-sm leading-relaxed ${isSlate ? "text-gray-600" : "text-gray-500"}`}>
         {description}
       </p>
 
@@ -123,7 +123,7 @@ function ProjectCard({ project }) {
 
       {/* Action links */}
       {hasActionLinks && (
-        <div className="flex items-center gap-5">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
           {primaryHref && (
             <a
               href={primaryHref}

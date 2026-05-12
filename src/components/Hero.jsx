@@ -53,7 +53,7 @@ export default function Hero() {
               <br />
               <span className="text-gradient-gold">아이디어 {visibleProjectCount}개.</span>
               <br />
-              <span className="whitespace-nowrap">실제로 작동하는 결과물.</span>
+              <span className="md:whitespace-nowrap">실제로 작동하는 결과물.</span>
             </h1>
 
             <p className="text-base md:text-lg text-gray-400 leading-relaxed mb-10 animate-slide-up">
@@ -65,7 +65,7 @@ export default function Hero() {
               {/* Primary */}
               <a
                 href="#projects"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gold-500 hover:bg-gold-400 text-dark-900 text-sm font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(212,168,67,0.28)]"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 bg-gold-500 hover:bg-gold-400 text-dark-900 text-sm font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(212,168,67,0.28)]"
               >
                 프로젝트 보기
                 <ArrowRightIcon />
@@ -76,7 +76,7 @@ export default function Hero() {
                   href={meta.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-dark-400/80 hover:border-gold-500/50 text-gray-400 hover:text-gold-400 text-sm font-medium rounded-lg transition-all duration-200 hover:-translate-y-0.5"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 border border-dark-400/80 hover:border-gold-500/50 text-gray-400 hover:text-gold-400 text-sm font-medium rounded-lg transition-all duration-200 hover:-translate-y-0.5"
                 >
                   <GitHubIcon />
                   GitHub 보기
@@ -97,14 +97,14 @@ export default function Hero() {
             </div>
 
             {/* Mobile stat pills */}
-            <div className="flex md:hidden gap-2.5 mt-3 flex-wrap">
+            <div className="grid md:hidden grid-cols-2 gap-2.5 mt-3">
               {mobileStats.map((s) => (
                 <div
                   key={s.value}
-                  className="px-3.5 py-2 rounded-lg border border-dark-400/60 bg-dark-800/60 flex items-center gap-2"
+                  className="px-3.5 py-2 rounded-lg border border-dark-400/60 bg-dark-800/60 flex items-center gap-2 min-w-0"
                 >
-                  <span className="text-xs font-mono text-gold-400">{s.value}</span>
-                  {s.label && <span className="text-xs text-gray-600">{s.label}</span>}
+                  <span className="text-xs font-mono text-gold-400 whitespace-nowrap">{s.value}</span>
+                  {s.label && <span className="text-xs text-gray-600 truncate">{s.label}</span>}
                 </div>
               ))}
             </div>

@@ -68,8 +68,22 @@ export default function TechStack() {
         </p>
         <div className="section-divider mb-10" />
 
-        {/* Currently Exploring — full width, top */}
-        <div className="card-dark rounded-xl p-6 transition-all duration-300 group hover:-translate-y-0.5 mb-10">
+        {/* Header row */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 md:mb-14">
+          <h2 className="text-3xl md:text-4xl font-semibold leading-snug">
+            아이디어를 구현하는
+            <br />
+            <span className="text-gradient-gold">기술과 도구</span>
+          </h2>
+          <p className="text-sm text-gray-500 max-w-xs md:text-right leading-relaxed">
+            도구를 배우는 데서 멈추지 않고,
+            <br />
+            작은 결과물로 연결하는 데 집중합니다.
+          </p>
+        </div>
+
+        {/* Currently Exploring */}
+        <div className="card-dark rounded-xl p-5 sm:p-6 transition-all duration-300 group hover:-translate-y-0.5 mb-5">
           <div className="flex flex-col sm:flex-row sm:items-start sm:gap-12 gap-4">
             {/* Left: label + description */}
             <div className="sm:w-72 flex-shrink-0">
@@ -98,20 +112,6 @@ export default function TechStack() {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* Header row */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
-          <h2 className="text-3xl md:text-4xl font-semibold leading-snug">
-            아이디어를 구현하는
-            <br />
-            <span className="text-gradient-gold">기술과 도구</span>
-          </h2>
-          <p className="text-sm text-gray-500 max-w-xs md:text-right leading-relaxed">
-            도구를 배우는 데서 멈추지 않고,
-            <br />
-            작은 결과물로 연결하는 데 집중합니다.
-          </p>
         </div>
 
         {/* 2-column grid */}
