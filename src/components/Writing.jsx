@@ -72,14 +72,14 @@ export default function Writing() {
   const restTopics = writingTopics.filter((t) => !t.featured);
 
   return (
-    <section id="writing" className="scroll-mt-20 py-24 md:py-32 px-6">
+    <section id="writing" className="scroll-mt-20 py-20 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Section label */}
         <p className="text-xs font-mono text-gold-500 tracking-[0.3em] uppercase mb-4">
           Writing · Growth Log
         </p>
-        <div className="section-divider mb-10" />
+        <div className="section-divider mb-8 md:mb-10" />
 
         {/* Headline */}
         <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-3">
@@ -94,7 +94,7 @@ export default function Writing() {
         </p>
 
         {/* Body copy */}
-        <div className="text-sm text-gray-400 leading-relaxed max-w-xl mb-10">
+        <div className="text-sm text-gray-400 leading-relaxed max-w-xl mb-8 md:mb-10">
           <p>
             퇴근 후에도 글을 쓰고, AI로 실험하며,
             <br />
@@ -102,20 +102,20 @@ export default function Writing() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12 md:mb-14">
           {[featuredTopic, ...restTopics].filter(Boolean).map((topic) => (
             <WritingCard key={topic.title} topic={topic} />
           ))}
         </div>
 
         {/* Bottom CTA */}
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pt-8 border-t border-dark-600/40">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 md:gap-6 pt-7 md:pt-8 border-t border-dark-600/40">
           <p className="text-sm text-gray-500 leading-relaxed">
             기록은 아직 완성된 답이 아니라,
             <br />
             계속 고쳐가는 과정입니다.
           </p>
-          <div className="grid w-full grid-cols-1 gap-2.5 sm:flex sm:w-auto sm:flex-wrap flex-shrink-0">
+          <div className="grid w-full grid-cols-2 gap-2.5 sm:flex sm:w-auto sm:flex-wrap flex-shrink-0">
             {/* Primary — Threads */}
             {meta.social.threads && (
               <a

@@ -16,22 +16,22 @@ function IdentityTag({ label, accent }) {
 
 export default function About() {
   return (
-    <section id="about" className="scroll-mt-20 py-24 md:py-32 px-6">
+    <section id="about" className="scroll-mt-20 py-20 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <p className="text-xs font-mono text-gold-500 tracking-[0.3em] uppercase mb-4">
           About
         </p>
-        <div className="section-divider mb-16" />
+        <div className="section-divider mb-12 md:mb-16" />
 
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-start">
           {/* Left: Main intro */}
           <div>
-            <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-8 text-white">
+            <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-7 md:mb-8 text-white">
               저는 만들면서
               <br />
               <span className="text-gradient-gold">배웁니다.</span>
             </h2>
-            <div className="space-y-5 text-gray-400 text-base leading-relaxed">
+            <div className="space-y-4 md:space-y-5 text-gray-400 text-base leading-relaxed">
               <p>
                 완벽해질 때까지 미루다가 아무것도 안 만들었던 적이 있어요.
                 <br />
@@ -49,9 +49,9 @@ export default function About() {
           </div>
 
           {/* Right: Cards */}
-          <div className="space-y-5">
+          <div className="space-y-4 md:space-y-5">
             {/* IDENTITY */}
-            <div className="card-dark rounded-xl p-6 transition-all duration-300 hover:-translate-y-0.5">
+            <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 hover:-translate-y-0.5">
               <p className="text-xs font-mono text-gold-500 tracking-widest mb-4">
                 IDENTITY
               </p>
@@ -63,11 +63,11 @@ export default function About() {
             </div>
 
             {/* FOCUS AREAS */}
-            <div className="card-dark rounded-xl p-6 transition-all duration-300 hover:-translate-y-0.5">
+            <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 hover:-translate-y-0.5">
               <p className="text-xs font-mono text-gold-500 tracking-widest mb-4">
                 FOCUS AREAS
               </p>
-              <ul className="space-y-2.5 text-sm text-gray-400">
+              <ul className="space-y-2 md:space-y-2.5 text-sm text-gray-400">
                 {focusAreas.map((item) => (
                   <li key={item} className="flex items-start gap-2.5">
                     <span className="mt-1.5 block w-1 h-1 rounded-full bg-gold-500/60 flex-shrink-0" />
@@ -78,7 +78,7 @@ export default function About() {
             </div>
 
             {/* PHILOSOPHY */}
-            <div className="card-dark rounded-xl p-6 transition-all duration-300 hover:-translate-y-0.5">
+            <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 hover:-translate-y-0.5">
               <p className="text-xs font-mono text-gold-500 tracking-widest mb-4">
                 PHILOSOPHY
               </p>

@@ -10,12 +10,12 @@ import {
 
 export default function Contact() {
   return (
-    <section id="contact" className="scroll-mt-20 py-24 md:py-32 px-6">
+    <section id="contact" className="scroll-mt-20 py-20 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <p className="text-xs font-mono text-gold-500 tracking-[0.3em] uppercase mb-4">
           Contact
         </p>
-        <div className="section-divider mb-16" />
+        <div className="section-divider mb-12 md:mb-16" />
 
         {/* 2-column layout */}
         <div className="grid md:grid-cols-[minmax(0,1fr)_320px] gap-12 md:gap-16 items-start">
@@ -37,7 +37,7 @@ export default function Contact() {
                 이야기를 열어두고 있습니다.
               </p>
             </div>
-            <p className="text-sm text-gray-600 leading-relaxed mb-10">
+            <p className="text-sm text-gray-600 leading-relaxed mb-8 md:mb-10">
               완벽한 계획보다,
               작게 시작해서 실제로 만들어보는 대화를 좋아합니다.
             </p>
@@ -81,7 +81,7 @@ export default function Contact() {
               )}
 
               {/* Secondary — SNS (wrap) */}
-              <div className="grid grid-cols-1 sm:flex sm:flex-wrap gap-2.5">
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5">
                 {meta.social.instagram && (
                   <a
                     href={meta.social.instagram}
@@ -137,7 +137,7 @@ export default function Contact() {
 
           {/* Right: OPEN TO card */}
           <div className="md:pt-2">
-            <div className="rounded-xl border border-dark-400/60 bg-dark-800/50 p-6">
+            <div className="rounded-xl border border-dark-400/60 bg-dark-800/50 p-5 md:p-6">
               <p className="text-xs font-mono text-gold-500/80 tracking-widest mb-1.5">
                 OPEN TO
               </p>
@@ -160,7 +160,7 @@ export default function Contact() {
       </div>
 
       {/* Footer */}
-      <div className="max-w-6xl mx-auto mt-24 pt-8 border-t border-dark-600/50">
+      <div className="max-w-6xl mx-auto mt-20 md:mt-24 pt-8 border-t border-dark-600/50">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
           <span className="text-gray-500 leading-relaxed text-center sm:text-left">
             작게 만들고, 직접 써보고, 계속 고쳐갑니다.

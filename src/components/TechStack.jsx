@@ -32,7 +32,7 @@ function StackCard({ stack }) {
   const highlight = stack.highlight || [];
 
   return (
-    <div className="card-dark rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 group hover:-translate-y-0.5">
+    <div className="card-dark rounded-xl p-5 md:p-6 flex flex-col gap-3.5 md:gap-4 transition-all duration-300 group hover:-translate-y-0.5">
       {/* Category label */}
       <p className={`text-xs font-mono tracking-widest ${labelColors[stack.color] || "text-gold-400"}`}>
         {stack.category}
@@ -44,7 +44,7 @@ function StackCard({ stack }) {
       </p>
 
       {/* Tags */}
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-1.5 md:gap-2">
         {items.map((item) => (
           <TagItem
             key={item}
@@ -60,16 +60,16 @@ function StackCard({ stack }) {
 
 export default function TechStack() {
   return (
-    <section id="stack" className="scroll-mt-20 py-24 md:py-32 px-6 bg-dark-800/30">
+    <section id="stack" className="scroll-mt-20 py-20 md:py-32 px-6 bg-dark-800/30">
       <div className="max-w-6xl mx-auto">
         {/* Section label */}
         <p className="text-xs font-mono text-gold-500 tracking-[0.3em] uppercase mb-4">
           Tech Stack
         </p>
-        <div className="section-divider mb-10" />
+        <div className="section-divider mb-8 md:mb-10" />
 
         {/* Header row */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10 md:mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-9 md:mb-14">
           <h2 className="text-3xl md:text-4xl font-semibold leading-snug">
             아이디어를 구현하는
             <br />
@@ -83,7 +83,7 @@ export default function TechStack() {
         </div>
 
         {/* Currently Exploring */}
-        <div className="card-dark rounded-xl p-5 sm:p-6 transition-all duration-300 group hover:-translate-y-0.5 mb-5">
+        <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 group hover:-translate-y-0.5 mb-4 md:mb-5">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
             <div className="max-w-xl">
               <p className="text-xs font-mono text-violet-400 tracking-widest mb-2.5">
@@ -114,7 +114,7 @@ export default function TechStack() {
         </div>
 
         {/* Stack grid */}
-        <div className="grid sm:grid-cols-2 gap-5">
+        <div className="grid sm:grid-cols-2 gap-4 md:gap-5">
           {techStack.map((stack) => (
             <StackCard key={stack.category} stack={stack} />
           ))}

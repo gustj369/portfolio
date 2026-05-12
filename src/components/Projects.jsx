@@ -37,7 +37,7 @@ function ProjectCard({ project }) {
   const isSlate = color === "slate";
   const isViolet = color === "violet";
 
-  const cardBase = "rounded-2xl p-5 sm:p-6 flex flex-col gap-3 sm:gap-3.5 border transition-all duration-300 group hover:-translate-y-1";
+  const cardBase = "rounded-2xl p-5 sm:p-6 flex flex-col gap-2.5 sm:gap-3.5 border transition-all duration-300 group hover:-translate-y-1";
   const cardAccent = featured
     ? "border-gold-500/25 bg-dark-800/60 hover:border-gold-500/45 hover:shadow-[0_0_24px_rgba(212,168,67,0.07)]"
     : isSlate
@@ -95,7 +95,7 @@ function ProjectCard({ project }) {
 
       {/* Key Build */}
       {keyBuild && (
-        <p className={`text-[10px] font-mono leading-relaxed border-t pt-2.5 -mt-0.5 ${
+        <p className={`text-[10px] font-mono leading-relaxed border-t pt-2 -mt-0.5 ${
           isSlate
             ? "text-gray-700 border-dark-600/25"
             : "text-gray-600 border-dark-600/50"
@@ -176,14 +176,14 @@ export default function Projects() {
   const statusEntries = statusOrder.filter((status) => statusSummary[status]);
 
   return (
-    <section id="projects" className="scroll-mt-20 py-24 md:py-32 px-6">
+    <section id="projects" className="scroll-mt-20 py-20 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <p className="text-xs font-mono text-gold-500 tracking-[0.3em] uppercase mb-4">
           Projects
         </p>
-        <div className="section-divider mb-10" />
+        <div className="section-divider mb-8 md:mb-10" />
 
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-10 md:mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-semibold leading-snug">
               직접 만든
