@@ -10,7 +10,7 @@ import {
 
 export default function Contact() {
   return (
-    <section id="contact" className="py-24 md:py-32 px-6">
+    <section id="contact" className="scroll-mt-20 py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <p className="text-xs font-mono text-gold-500 tracking-[0.3em] uppercase mb-4">
           Contact
@@ -18,7 +18,7 @@ export default function Contact() {
         <div className="section-divider mb-16" />
 
         {/* 2-column layout */}
-        <div className="grid md:grid-cols-[1fr_auto] gap-12 md:gap-16 items-start">
+        <div className="grid md:grid-cols-[minmax(0,1fr)_320px] gap-12 md:gap-16 items-start">
 
           {/* Left: Title + description + buttons */}
           <div className="max-w-xl">
@@ -136,8 +136,8 @@ export default function Contact() {
           </div>
 
           {/* Right: OPEN TO card */}
-          <div className="md:w-52 md:pt-2">
-            <div className="rounded-xl border border-dark-400/60 bg-dark-800/50 p-5">
+          <div className="md:pt-2">
+            <div className="rounded-xl border border-dark-400/60 bg-dark-800/50 p-6">
               <p className="text-xs font-mono text-gold-500/80 tracking-widest mb-1.5">
                 OPEN TO
               </p>

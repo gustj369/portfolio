@@ -72,7 +72,7 @@ export default function Writing() {
   const restTopics = writingTopics.filter((t) => !t.featured);
 
   return (
-    <section id="writing" className="py-24 md:py-32 px-6">
+    <section id="writing" className="scroll-mt-20 py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
 
         {/* Section label */}
@@ -102,16 +102,8 @@ export default function Writing() {
           </p>
         </div>
 
-        {/* Featured card — full width */}
-        {featuredTopic && (
-          <div className="mb-4">
-            <WritingCard topic={featuredTopic} />
-          </div>
-        )}
-
-        {/* Topic cards — remaining, 3-col desktop, 2-col tablet, 1-col mobile */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-14">
-          {restTopics.map((topic) => (
+          {[featuredTopic, ...restTopics].filter(Boolean).map((topic) => (
             <WritingCard key={topic.title} topic={topic} />
           ))}
         </div>

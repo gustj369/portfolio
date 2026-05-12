@@ -16,7 +16,7 @@ function IdentityTag({ label, accent }) {
 
 export default function About() {
   return (
-    <section id="about" className="py-24 md:py-32 px-6">
+    <section id="about" className="scroll-mt-20 py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <p className="text-xs font-mono text-gold-500 tracking-[0.3em] uppercase mb-4">
           About

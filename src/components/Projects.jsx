@@ -173,35 +173,43 @@ export default function Projects() {
       return summary;
     }, {});
 
-  const statusSummaryText = statusOrder
-    .filter((status) => statusSummary[status])
-    .map((status) => `${status} ${statusSummary[status]}`)
-    .join(" · ") || "Archive only";
+  const statusEntries = statusOrder.filter((status) => statusSummary[status]);
 
   return (
-    <section id="projects" className="py-24 md:py-32 px-6">
+    <section id="projects" className="scroll-mt-20 py-24 md:py-32 px-6">
       <div className="max-w-6xl mx-auto">
         <p className="text-xs font-mono text-gold-500 tracking-[0.3em] uppercase mb-4">
           Projects
         </p>
         <div className="section-divider mb-10" />
 
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-14">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 mb-12">
           <div>
             <h2 className="text-3xl md:text-4xl font-semibold leading-snug">
               직접 만든
               <br />
               <span className="text-gradient-gold">작은 결과물들</span>
             </h2>
-            <p className="mt-3 text-xs font-mono text-gray-600 tracking-widest">
-              {statusSummaryText}
-            </p>
           </div>
-          <p className="text-sm text-gray-500 max-w-xs md:text-right leading-relaxed">
-            아이디어에서 멈추지 않고,
-            <br />
-            실제로 작동하는 형태까지 만듭니다.
-          </p>
+          <div className="flex flex-col lg:items-end gap-4">
+            <p className="text-sm text-gray-500 max-w-xs lg:text-right leading-relaxed">
+              아이디어에서 멈추지 않고,
+              <br />
+              실제로 작동하는 형태까지 만듭니다.
+            </p>
+            {statusEntries.length > 0 && (
+              <div className="flex flex-wrap lg:justify-end gap-2">
+                {statusEntries.map((status) => (
+                  <span
+                    key={status}
+                    className="px-2.5 py-1 text-xs font-mono rounded-lg border border-dark-400/60 text-gray-500 bg-dark-800/30"
+                  >
+                    {status} {statusSummary[status]}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">

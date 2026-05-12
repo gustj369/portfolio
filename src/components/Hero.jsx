@@ -110,8 +110,8 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Photo + Stat cards — desktop only */}
-          <div className="hidden md:flex flex-col gap-4 ml-auto w-full max-w-[260px]">
+          {/* Right: Profile panel — desktop only */}
+          <div className="hidden md:block ml-auto w-full max-w-[300px] rounded-2xl border border-dark-400/50 bg-dark-800/35 p-4 backdrop-blur-sm">
 
             {/* Profile photo */}
             <div className="rounded-xl overflow-hidden border border-gold-500/20 bg-dark-800/40">
@@ -125,23 +125,25 @@ export default function Hero() {
               />
             </div>
 
-            {statCards.map((card) => (
-              <div
-                key={card.value}
-                className="rounded-xl px-6 py-5 border border-dark-400/60 bg-dark-800/60 backdrop-blur-sm transition-all duration-200 hover:border-gold-500/30 hover:-translate-y-0.5"
-              >
-                {card.mono ? (
-                  <p className="text-lg font-semibold font-mono text-gold-400 mb-2 leading-none">
-                    {card.value}
-                  </p>
-                ) : (
-                  <p className="text-xs font-mono text-gold-500 tracking-widest mb-2 leading-none">
-                    {card.value}
-                  </p>
-                )}
-                <p className="text-xs text-gray-500 leading-relaxed">{card.label}</p>
-              </div>
-            ))}
+            <div className="mt-4 grid gap-3">
+              {statCards.map((card) => (
+                <div
+                  key={card.value}
+                  className="rounded-xl px-5 py-4 border border-dark-400/60 bg-dark-800/60 transition-all duration-200 hover:border-gold-500/30 hover:-translate-y-0.5"
+                >
+                  {card.mono ? (
+                    <p className="text-lg font-semibold font-mono text-gold-400 mb-2 leading-none">
+                      {card.value}
+                    </p>
+                  ) : (
+                    <p className="text-xs font-mono text-gold-500 tracking-widest mb-2 leading-none">
+                      {card.value}
+                    </p>
+                  )}
+                  <p className="text-xs text-gray-500 leading-relaxed">{card.label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 

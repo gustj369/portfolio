@@ -2,7 +2,7 @@ import { flowSteps, workflowResultProjects, workflowSteps, workflowTools } from 
 
 export default function AIWorkflow() {
   return (
-    <section id="workflow" className="py-24 md:py-32 px-6 bg-dark-800/30">
+    <section id="workflow" className="scroll-mt-20 py-24 md:py-32 px-6 bg-dark-800/30">
       <div className="max-w-6xl mx-auto">
         {/* Section label */}
         <p className="text-xs font-mono text-gold-500 tracking-[0.3em] uppercase mb-4">
@@ -10,54 +10,57 @@ export default function AIWorkflow() {
         </p>
         <div className="section-divider mb-10" />
 
-        {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <h2 className="text-3xl md:text-4xl font-semibold leading-snug">
-            AI로 시작하지만,
-            <br />
-            <span className="text-gradient-gold">완성은 직접 합니다.</span>
-          </h2>
-          <p className="text-sm text-gray-500 max-w-xs md:text-right leading-relaxed">
-            프롬프트보다 중요한 건,
-            <br />
-            작게 만들고 끝까지 다듬는 과정이라고 생각합니다.
-          </p>
-        </div>
-
-        {/* Flow pill */}
-        <div className="mb-8">
-          <div className="inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1.5 px-3.5 py-1.5 rounded-lg border border-dark-400/50 bg-dark-800/30">
-            {flowSteps.map((step, i) => (
-              <span key={step} className="inline-flex items-center gap-2">
-                <span className="text-xs font-mono text-gray-500">{step}</span>
-                {i < flowSteps.length - 1 && (
-                  <span className="text-gold-500/50 text-xs">→</span>
-                )}
-              </span>
-            ))}
+        {/* Header + process panel */}
+        <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(360px,0.9fr)] gap-8 lg:gap-12 mb-12 items-start">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-semibold leading-snug">
+              AI로 시작하지만,
+              <br />
+              <span className="text-gradient-gold">완성은 직접 합니다.</span>
+            </h2>
+            <p className="mt-5 text-sm text-gray-500 max-w-xs leading-relaxed">
+              프롬프트보다 중요한 건,
+              <br />
+              작게 만들고 끝까지 다듬는 과정이라고 생각합니다.
+            </p>
           </div>
-        </div>
 
-        {/* Tools row */}
-        <div className="flex items-start gap-3 mb-12 flex-wrap">
-          <span className="text-xs font-mono text-gray-700 tracking-widest pt-2.5">
-            TOOLS USED
-          </span>
-          <div className="w-4 h-px bg-dark-500/60 mt-4 hidden sm:block" />
-          <div className="flex gap-2.5 flex-wrap">
-            {workflowTools.map((tool) => (
-              <div
-                key={tool.name}
-                className="px-3 py-2 rounded-lg border border-dark-400/50 bg-dark-800/40"
-              >
-                <p className="text-xs font-mono text-gray-400 leading-none mb-1">
-                  {tool.name}
-                </p>
-                <p className="text-[10px] text-gray-700 leading-none whitespace-nowrap">
-                  {tool.role}
-                </p>
+          <div className="rounded-xl border border-dark-400/50 bg-dark-900/30 p-5">
+            {/* Flow pill */}
+            <div className="mb-5">
+              <div className="inline-flex max-w-full flex-wrap items-center gap-x-2 gap-y-1.5 px-3.5 py-1.5 rounded-lg border border-dark-400/50 bg-dark-800/30">
+                {flowSteps.map((step, i) => (
+                  <span key={step} className="inline-flex items-center gap-2">
+                    <span className="text-xs font-mono text-gray-500">{step}</span>
+                    {i < flowSteps.length - 1 && (
+                      <span className="text-gold-500/50 text-xs">→</span>
+                    )}
+                  </span>
+                ))}
               </div>
-            ))}
+            </div>
+
+            {/* Tools row */}
+            <div>
+              <span className="block text-xs font-mono text-gray-700 tracking-widest mb-3">
+                TOOLS USED
+              </span>
+              <div className="grid sm:grid-cols-2 gap-2.5">
+                {workflowTools.map((tool) => (
+                  <div
+                    key={tool.name}
+                    className="px-3 py-2 rounded-lg border border-dark-400/50 bg-dark-800/40"
+                  >
+                    <p className="text-xs font-mono text-gray-400 leading-none mb-1">
+                      {tool.name}
+                    </p>
+                    <p className="text-[10px] text-gray-700 leading-none whitespace-nowrap">
+                      {tool.role}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 

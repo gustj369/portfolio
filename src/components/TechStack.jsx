@@ -60,7 +60,7 @@ function StackCard({ stack }) {
 
 export default function TechStack() {
   return (
-    <section id="stack" className="py-24 md:py-32 px-6 bg-dark-800/30">
+    <section id="stack" className="scroll-mt-20 py-24 md:py-32 px-6 bg-dark-800/30">
       <div className="max-w-6xl mx-auto">
         {/* Section label */}
         <p className="text-xs font-mono text-gold-500 tracking-[0.3em] uppercase mb-4">
@@ -84,9 +84,8 @@ export default function TechStack() {
 
         {/* Currently Exploring */}
         <div className="card-dark rounded-xl p-5 sm:p-6 transition-all duration-300 group hover:-translate-y-0.5 mb-5">
-          <div className="flex flex-col sm:flex-row sm:items-start sm:gap-12 gap-4">
-            {/* Left: label + description */}
-            <div className="sm:w-72 flex-shrink-0">
+          <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+            <div className="max-w-xl">
               <p className="text-xs font-mono text-violet-400 tracking-widest mb-2.5">
                 {currentlyExploring.title}
               </p>
@@ -100,8 +99,8 @@ export default function TechStack() {
               </p>
             </div>
 
-            {/* Right: tags */}
-            <div className="flex flex-wrap gap-2 sm:pt-0.5">
+            {/* Tags */}
+            <div className="flex flex-wrap gap-2 lg:justify-end">
               {currentlyExploring.items.map((item) => (
                 <span
                   key={item}
@@ -114,7 +113,7 @@ export default function TechStack() {
           </div>
         </div>
 
-        {/* 2-column grid */}
+        {/* Stack grid */}
         <div className="grid sm:grid-cols-2 gap-5">
           {techStack.map((stack) => (
             <StackCard key={stack.category} stack={stack} />
