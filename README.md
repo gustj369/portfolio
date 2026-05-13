@@ -31,6 +31,13 @@ npm run preview
 - 스타일 수정: 데스크톱과 모바일 폭에서 텍스트 줄바꿈, 간격, 버튼 영역을 확인합니다.
 - 배포 전: `npm run build`를 실행하고, 필요하면 `npm run preview`로 빌드 결과를 확인합니다.
 
+### 모바일 밀도 확인 기준
+
+- 모바일 섹션 여백은 넓게 보이되, 카드가 길게 반복되는 구간은 과하게 늘리지 않습니다.
+- 카드 내부 여백은 내용량에 맞춰 조절하고, AI Workflow·Projects·Tech Stack처럼 카드가 많은 섹션은 스크롤 피로를 줄입니다.
+- 주요 CTA는 한 줄 전체 폭을 사용할 수 있지만, 보조 SNS 링크는 2열 또는 작은 버튼 묶음으로 확인합니다.
+- 모바일 확인 시 Projects 카드, AI Workflow 단계 카드, Tech Stack 카드, Contact 버튼 배열을 우선 점검합니다.
+
 ## 프로젝트 구조
 
 ```
@@ -76,3 +83,9 @@ src/
 
 ### 색상 테마
 `tailwind.config.js`의 `colors` 섹션에서 골드(`gold`)와 바이올렛(`violet`) 컬러를 조정할 수 있습니다.
+
+## 다음 리팩토링 후보
+
+- 여러 컴포넌트에서 카드의 padding, border, hover 스타일이 반복됩니다.
+- 바로 분리하기보다 `Projects.jsx`, `AIWorkflow.jsx`, `Writing.jsx`, `TechStack.jsx`, `Contact.jsx`의 카드 스타일 반복을 먼저 비교합니다.
+- 공통화가 필요해지면 작은 `Card` 또는 카드 스타일 유틸리티로 묶는 것을 검토합니다.

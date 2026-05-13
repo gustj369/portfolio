@@ -42,10 +42,10 @@ export default function Contact() {
               작게 시작해서 실제로 만들어보는 대화를 좋아합니다.
             </p>
 
-            {/* CTA buttons */}
+            {/* Contact actions: Email is the primary CTA, GitHub is secondary, SNS links stay compact on mobile. */}
             <div className="flex flex-col gap-3">
 
-              {/* Primary — Email */}
+              {/* Primary CTA — full-width on mobile */}
               <div>
                 {meta.email && (
                   <>
@@ -64,7 +64,7 @@ export default function Contact() {
                 )}
               </div>
 
-              {/* Secondary — GitHub (개발) */}
+              {/* Secondary CTA — development profile */}
               {meta.social.github && (
                 <div>
                   <a
@@ -80,7 +80,7 @@ export default function Contact() {
                 </div>
               )}
 
-              {/* Secondary — SNS (wrap) */}
+              {/* SNS link group — 2 columns on mobile, wrapping row on larger screens */}
               <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5">
                 {meta.social.instagram && (
                   <a

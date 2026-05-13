@@ -19,6 +19,12 @@ export function getWritingMonths() {
   return (now.getFullYear() - sy) * 12 + (now.getMonth() - (sm - 1));
 }
 
+// Projects 카드 필드 기준
+// - demo: 기본 CTA 링크로 표시됩니다. 없으면 github가 기본 CTA가 됩니다.
+// - github: 카드 우측 상단 아이콘과 보조 "코드 보기" 링크에 사용됩니다.
+// - extraLinks: demo/github와 별개로 추가 링크를 나란히 표시합니다.
+// - tags: 카드 하단의 작은 태그 칩으로 표시됩니다.
+// - keyBuild: 태그 위에 작은 제작 포인트 문장으로 표시됩니다.
 export const projects = [
   {
     id: 1,
