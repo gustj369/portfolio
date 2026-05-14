@@ -13,7 +13,10 @@ const statusConfig = {
 function StatusPill({ status }) {
   const cls = statusConfig[status] || statusConfig.Archive;
   return (
-    <span className={`inline-flex items-center px-2 py-0.5 text-xs font-mono rounded border ${cls}`}>
+    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-mono rounded border ${cls}`}>
+      {status === "In Progress" && (
+        <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse flex-shrink-0" />
+      )}
       {status}
     </span>
   );
