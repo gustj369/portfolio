@@ -25,7 +25,7 @@ function WritingCard({ topic }) {
 
   return (
     <div
-      className={`rounded-xl p-5 border flex flex-col gap-3 transition-all duration-300 group backdrop-blur-sm hover:-translate-y-0.5 ${cardClass}`}
+      className={`rounded-xl p-5 border flex flex-col gap-3 transition-all duration-300 group backdrop-blur-sm md:hover:-translate-y-0.5 ${cardClass}`}
     >
       {/* Icon */}
       <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-mono flex-shrink-0 ${iconClass}`}>
@@ -122,7 +122,7 @@ export default function Writing() {
                 href={meta.social.threads}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400 hover:border-gold-500/50 text-gray-400 hover:text-gold-400 text-sm transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400 hover:border-gold-500/50 text-gray-400 hover:text-gold-400 text-sm transition-all duration-200 md:hover:-translate-y-0.5"
               >
                 <ThreadsIcon />
                 Threads 보기
@@ -134,7 +134,7 @@ export default function Writing() {
                 href={meta.social.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 hover:border-dark-300/60 text-gray-600 hover:text-gray-400 text-sm transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 hover:border-dark-300/60 text-gray-600 hover:text-gray-400 text-sm transition-all duration-200 md:hover:-translate-y-0.5"
               >
                 <InstagramIcon />
                 Instagram 보기
@@ -146,7 +146,7 @@ export default function Writing() {
                 href={meta.social.x}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 hover:border-dark-300/60 text-gray-600 hover:text-gray-400 text-sm transition-all duration-200 hover:-translate-y-0.5"
+                className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 hover:border-dark-300/60 text-gray-600 hover:text-gray-400 text-sm transition-all duration-200 md:hover:-translate-y-0.5"
               >
                 <XIcon />
                 X 보기

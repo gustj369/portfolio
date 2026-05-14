@@ -52,7 +52,7 @@ export default function Contact() {
                     <a
                       href={`mailto:${meta.email}`}
                       aria-label={`메일로 연락하기: ${meta.email}`}
-                      className="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 px-5 py-3 rounded-xl border border-gold-500/50 text-gold-400 text-sm hover:border-gold-400 hover:bg-gold-500/8 hover:shadow-[0_0_16px_rgba(212,168,67,0.12)] transition-all duration-200 hover:-translate-y-0.5"
+                      className="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 px-5 py-3 rounded-xl border border-gold-500/50 text-gold-400 text-sm hover:border-gold-400 hover:bg-gold-500/8 hover:shadow-[0_0_16px_rgba(212,168,67,0.12)] transition-all duration-200 md:hover:-translate-y-0.5"
                     >
                       <MailIcon />
                       메일로 연락하기
@@ -72,7 +72,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="GitHub 보기"
-                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400 text-gray-400 text-sm hover:border-gold-500/40 hover:text-gold-400 transition-all duration-200 hover:-translate-y-0.5"
+                    className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400 text-gray-400 text-sm hover:border-gold-500/40 hover:text-gold-400 transition-all duration-200 md:hover:-translate-y-0.5"
                   >
                     <GitHubIcon />
                     GitHub 보기
@@ -88,7 +88,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram 보기"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 md:hover:-translate-y-0.5"
                   >
                     <InstagramIcon />
                     Instagram 보기
@@ -100,7 +100,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Threads 보기"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 md:hover:-translate-y-0.5"
                   >
                     <ThreadsIcon />
                     Threads 보기
@@ -112,7 +112,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="X 보기"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 md:hover:-translate-y-0.5"
                   >
                     <XIcon />
                     X 보기
@@ -124,7 +124,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="LinkedIn 보기"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 hover:-translate-y-0.5"
+                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 md:hover:-translate-y-0.5"
                   >
                     <LinkedInIcon />
                     LinkedIn 보기
