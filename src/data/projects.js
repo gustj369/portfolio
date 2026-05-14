@@ -67,7 +67,7 @@ export const projects = [
     tags: ["Desktop", "Knowledge Management", "Productivity"],
     github: "https://github.com/gustj369/second-brain-desktop",
     demo: null,
-    demoLabel: "제작 노트",
+    demoLabel: "GitHub 보기",
     color: "gold",
   },
   {
