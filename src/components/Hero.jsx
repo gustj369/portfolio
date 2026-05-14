@@ -49,7 +49,7 @@ export default function Hero() {
             </p>
 
             <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[3.5rem] font-semibold leading-[1.15] tracking-tight mb-7 animate-slide-up">
-              퇴근 후 9개월.
+              퇴근 후 {months}개월.
               <br />
               <span className="text-gradient-gold">아이디어 {visibleProjectCount}개.</span>
               <br />
