@@ -32,7 +32,7 @@ function StackCard({ stack }) {
   const highlight = stack.highlight || [];
 
   return (
-    <div className="card-dark rounded-xl p-5 md:p-6 flex flex-col gap-3.5 md:gap-4 transition-all duration-300 group hover:-translate-y-0.5">
+    <div className="card-dark rounded-xl p-5 md:p-6 flex flex-col gap-3.5 md:gap-4 transition-all duration-300 group md:hover:-translate-y-0.5">
       {/* Category label */}
       <p className={`text-xs font-mono tracking-widest ${labelColors[stack.color] || "text-gold-400"}`}>
         {stack.category}
@@ -83,7 +83,7 @@ export default function TechStack() {
         </div>
 
         {/* Currently Exploring */}
-        <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 group hover:-translate-y-0.5 mb-4 md:mb-5">
+        <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 group md:hover:-translate-y-0.5 mb-4 md:mb-5">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
             <div className="max-w-xl">
               <p className="text-xs font-mono text-violet-400 tracking-widest mb-2.5">

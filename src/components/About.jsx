@@ -51,7 +51,7 @@ export default function About() {
           {/* Right: Cards */}
           <div className="space-y-4 md:space-y-5">
             {/* IDENTITY */}
-            <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 hover:-translate-y-0.5">
+            <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 md:hover:-translate-y-0.5">
               <p className="text-xs font-mono text-gold-500 tracking-widest mb-4">
                 IDENTITY
               </p>
@@ -63,7 +63,7 @@ export default function About() {
             </div>
 
             {/* FOCUS AREAS */}
-            <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 hover:-translate-y-0.5">
+            <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 md:hover:-translate-y-0.5">
               <p className="text-xs font-mono text-gold-500 tracking-widest mb-4">
                 FOCUS AREAS
               </p>
@@ -78,7 +78,7 @@ export default function About() {
             </div>
 
             {/* PHILOSOPHY */}
-            <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 hover:-translate-y-0.5">
+            <div className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 md:hover:-translate-y-0.5">
               <p className="text-xs font-mono text-gold-500 tracking-widest mb-4">
                 PHILOSOPHY
               </p>

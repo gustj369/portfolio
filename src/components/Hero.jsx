@@ -65,7 +65,7 @@ export default function Hero() {
               {/* Primary */}
               <a
                 href="#projects"
-                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 bg-gold-500 hover:bg-gold-400 text-dark-900 text-sm font-semibold rounded-lg transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(212,168,67,0.28)]"
+                className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 bg-gold-500 hover:bg-gold-400 text-dark-900 text-sm font-semibold rounded-lg transition-all duration-200 md:hover:-translate-y-0.5 hover:shadow-[0_0_20px_rgba(212,168,67,0.28)]"
               >
                 프로젝트 보기
                 <ArrowRightIcon />
@@ -76,7 +76,7 @@ export default function Hero() {
                   href={meta.social.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 border border-dark-400/80 hover:border-gold-500/50 text-gray-400 hover:text-gold-400 text-sm font-medium rounded-lg transition-all duration-200 hover:-translate-y-0.5"
+                  className="inline-flex w-full sm:w-auto items-center justify-center gap-2 px-6 py-3 border border-dark-400/80 hover:border-gold-500/50 text-gray-400 hover:text-gold-400 text-sm font-medium rounded-lg transition-all duration-200 md:hover:-translate-y-0.5"
                 >
                   <GitHubIcon />
                   GitHub 보기
@@ -130,7 +130,7 @@ export default function Hero() {
               {statCards.map((card) => (
                 <div
                   key={card.value}
-                  className="rounded-xl px-5 py-4 border border-dark-400/60 bg-dark-800/60 transition-all duration-200 hover:border-gold-500/30 hover:-translate-y-0.5"
+                  className="rounded-xl px-5 py-4 border border-dark-400/60 bg-dark-800/60 transition-all duration-200 hover:border-gold-500/30 md:hover:-translate-y-0.5"
                 >
                   {card.mono ? (
                     <p className="text-lg font-semibold font-mono text-gold-400 mb-2 leading-none">

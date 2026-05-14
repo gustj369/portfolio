@@ -69,7 +69,7 @@ export default function AIWorkflow() {
           {workflowSteps.map((step) => (
             <div
               key={step.step}
-              className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 group hover:border-gold-500/20 hover:-translate-y-0.5"
+              className="card-dark rounded-xl p-5 md:p-6 transition-all duration-300 group hover:border-gold-500/20 md:hover:-translate-y-0.5"
             >
               {/* Step number + flow line */}
               <div className="flex items-center gap-3 mb-3 md:mb-4">
