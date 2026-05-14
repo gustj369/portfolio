@@ -40,7 +40,7 @@ function ProjectCard({ project }) {
   const isSlate = color === "slate";
   const isViolet = color === "violet";
 
-  const cardBase = "rounded-2xl p-5 sm:p-6 flex flex-col gap-2.5 sm:gap-3.5 border transition-all duration-300 group hover:-translate-y-1";
+  const cardBase = "rounded-2xl p-5 sm:p-6 flex flex-col gap-2.5 sm:gap-3.5 border transition-all duration-300 group md:hover:-translate-y-1";
   const cardAccent = featured
     ? "border-gold-500/25 bg-dark-800/60 hover:border-gold-500/45 hover:shadow-[0_0_24px_rgba(212,168,67,0.07)]"
     : isSlate
