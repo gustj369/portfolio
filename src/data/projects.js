@@ -1,3 +1,4 @@
+// Shared site metadata
 export const meta = {
   writingStartDate: "2025-08-01",
   email: "gustj258@gmail.com",
@@ -19,6 +20,7 @@ export function getWritingMonths() {
   return (now.getFullYear() - sy) * 12 + (now.getMonth() - (sm - 1));
 }
 
+// Projects section data
 // Projects 카드 필드 기준
 // - demo: 기본 CTA 링크로 표시됩니다. 없으면 github가 기본 CTA가 됩니다.
 // - github: 카드 우측 상단 아이콘과 보조 "코드 보기" 링크에 사용됩니다.
@@ -36,7 +38,7 @@ export const projects = [
     keyBuild: "경기 흐름 · 결과 계산 · EXE 패키징",
     tags: ["JavaScript", "Mini Game", "League System"],
     github: "https://github.com/gustj369/my-starleague",
-    demo: "https://drive.google.com/file/d/1jMg785B-P8oDLFothmSaq1Apl7B9m08r/view?usp=drive_link",
+    demo: "https://drive.google.com/file/d/1Y-q492ZAghJCs-Glt-Mgp2QfFXW_gG6L/view?usp=drive_link",
     demoLabel: "실행하기",
     color: "gold",
     featured: true,
@@ -121,6 +123,7 @@ export const projects = [
   },
 ];
 
+// Tech Stack section data
 export const techStack = [
   {
     category: "FRONTEND",
@@ -152,6 +155,7 @@ export const techStack = [
   },
 ];
 
+// Writing section data
 export const writingTopics = [
   {
     icon: "↗",
@@ -199,6 +203,7 @@ export const writingTopics = [
   },
 ];
 
+// AI Workflow section data
 export const workflowSteps = [
   {
     step: "01",
@@ -273,12 +278,14 @@ export const focusAreas = [
   "글쓰기와 생각 정리",
 ];
 
+// Tech Stack 섹션 보조 데이터
 export const currentlyExploring = {
   title: "CURRENTLY EXPLORING",
   description: "지금은 Figma로 화면을 먼저 그리고 코딩하는 순서를 실험 중이에요.\n게임 만드는 건 아직 어렵고요. 그래도 계속하고 있습니다.",
   items: ["Figma", "Game Dev"],
 };
 
+// Contact 섹션 데이터
 export const openToItems = [
   "Portfolio",
   "Side Project",

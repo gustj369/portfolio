@@ -27,6 +27,7 @@ npm run preview
 ## 수정 후 확인
 
 - 공통: `npm start`로 실행 후 Hero, Projects, AI Workflow, Writing, Tech Stack, Contact 섹션을 확인합니다.
+- 내비게이션: 상단 메뉴를 클릭했을 때 각 섹션 제목이 고정 헤더에 가리지 않고 자연스럽게 보이는지 확인합니다.
 - 데이터 수정: Projects 카드 수, 상태 카운트, 외부 링크 버튼이 의도대로 보이는지 확인합니다.
 - 스타일 수정: 데스크톱과 모바일 폭에서 텍스트 줄바꿈, 간격, 버튼 영역을 확인합니다.
 - 배포 전: `npm run build`를 실행하고, 필요하면 `npm run preview`로 빌드 결과를 확인합니다.
@@ -39,6 +40,9 @@ npm run preview
 - 모바일 확인 시 Projects 카드, AI Workflow 단계 카드, Tech Stack 카드, Contact 버튼 배열을 우선 점검합니다.
 
 ## 프로젝트 구조
+
+- 실제 페이지 흐름: Hero → About → Projects → AI Workflow → Writing → Tech Stack → Contact
+- 상단 내비게이션 노출: About, Projects, AI Workflow, Writing, Tech Stack, Contact
 
 ```
 src/
@@ -66,16 +70,19 @@ src/
 프로젝트 항목은 아래 필드를 기준으로 관리합니다.
 
 - 필수: `id`, `title`, `status`, `description`, `tags`, `color`
-- 선택: `sublabel`, `keyBuild`, `github`, `demo`, `demoLabel`, `featured`
+- 선택: `sublabel`, `keyBuild`, `github`, `demo`, `demoLabel`, `extraLinks`, `featured`
 - `status`는 `Live`, `Playable`, `In Progress`, `Prototype`, `Completed`, `Archive` 기준으로 사용합니다.
 - `Archive` 상태는 Hero의 프로젝트 수와 Projects 상태 카운트에서 제외됩니다.
+- `demo`는 카드의 기본 CTA 링크로 사용하며, 값이 없으면 `github`가 기본 CTA 역할을 대신합니다.
+- `github`는 카드 상단 아이콘과 보조 코드 링크에 사용합니다.
+- `extraLinks`는 기본 CTA와 별도로 함께 보여줄 추가 링크 목록입니다.
 
 ### 링크 교체
 기본 링크와 이메일은 `src/data/projects.js`의 `meta` 객체에서 관리합니다.
 
 - `Contact.jsx` — `meta` 기반 GitHub / Instagram / Threads / Email 링크
 - `Hero.jsx` — `meta.social.github` 기반 GitHub 버튼 링크
-- `Projects.jsx` — 각 프로젝트의 `github`, `demo` 링크
+- `Projects.jsx` — 각 프로젝트의 `github`, `demo`, `extraLinks` 링크
 
 ### 메타태그 수정
 페이지 타이틀, description, Open Graph, Twitter Card 정보는 루트 `index.html`에서 관리합니다.
