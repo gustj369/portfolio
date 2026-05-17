@@ -255,10 +255,8 @@ export const flowSteps = ["생각", "구조", "구현", "검증", "기록", "공
 // AIWorkflow 섹션 전용 도구 목록
 // techStack의 AI WORKFLOW 항목과 별개 — 도구별 역할 설명(role)이 추가된 구조
 export const workflowTools = [
-  { name: "ChatGPT", role: "아이디어 정리 · 문장화" },
-  { name: "Codex",   role: "코드 구조 · 구현 보조" },
-  { name: "GitHub",  role: "버전 관리 · 공개" },
-  { name: "Figma",   role: "화면 설계 · 레이아웃" },
+  { name: "Claude", role: "코드 구조 · 구현 보조" },
+  { name: "Codex",  role: "코드 구조 · 구현 보조" },
 ];
 
 export const workflowResultProjects = [

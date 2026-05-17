@@ -6,15 +6,9 @@ export default function Hero() {
   const visibleProjectCount = projects.filter((project) => project.status !== "Archive").length;
 
   const statCards = [
-    { value: `${months} MONTHS`, label: "퇴근 후 쌓은 기록",          mono: true  },
-    { value: `${visibleProjectCount} PROJECTS`, label: "직접 만들고 개선한 결과물",   mono: true  },
-    { value: "AI WORKFLOW",      label: "ChatGPT · Codex · GitHub",   mono: false },
-  ];
-
-  const mobileStats = [
-    { value: `${months} MONTHS`, label: "퇴근 후 기록" },
-    { value: `${visibleProjectCount} PROJECTS`, label: "결과물"       },
-    { value: "AI WORKFLOW",      label: "도구·방식"     },
+    { value: `${months} MONTHS`,           label: "퇴근 후 쌓은 기록",        mobileLabel: "퇴근 후 기록", mono: true  },
+    { value: `${visibleProjectCount} PROJECTS`, label: "직접 만들고 개선한 결과물", mobileLabel: "결과물",       mono: true  },
+    { value: "AI WORKFLOW",                label: "ChatGPT · Codex · GitHub",  mobileLabel: "도구·방식",   mono: false },
   ];
 
   return (
@@ -101,13 +95,13 @@ export default function Hero() {
 
             {/* Mobile stat pills */}
             <div className="grid md:hidden grid-cols-2 gap-2.5 mt-3">
-              {mobileStats.map((s) => (
+              {statCards.map((s) => (
                 <div
                   key={s.value}
                   className="px-3.5 py-2 rounded-lg border border-dark-400/60 bg-dark-800/60 flex items-center gap-2 min-w-0"
                 >
                   <span className="text-xs font-mono text-gold-400 whitespace-nowrap">{s.value}</span>
-                  {s.label && <span className="text-xs text-gray-600 truncate">{s.label}</span>}
+                  {s.mobileLabel && <span className="text-xs text-gray-600 truncate">{s.mobileLabel}</span>}
                 </div>
               ))}
             </div>
