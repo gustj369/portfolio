@@ -43,23 +43,37 @@ npm run preview
 
 - 실제 페이지 흐름: Hero → About → Projects → AI Workflow → Writing → Tech Stack → Contact
 - 상단 내비게이션 노출: About, Projects, AI Workflow, Writing, Tech Stack, Contact
+- `src/components/` — 각 섹션 화면과 상호작용을 그리는 UI 컴포넌트
+- `src/data/projects.js` — 프로젝트 카드, 스택, 글쓰기, 공통 링크처럼 여러 섹션이 함께 쓰는 데이터
+- `public/` — 파비콘, 프로필 이미지, OG 이미지처럼 브라우저가 그대로 제공하는 정적 파일
+- `index.html` — 페이지 타이틀과 description, Open Graph 같은 문서 메타데이터
+
+빠르게 찾기:
+- 프로젝트 카드를 바꾸려면 `src/data/projects.js`
+- 메타데이터를 바꾸려면 `index.html`
+- 공통 스타일을 바꾸려면 `src/index.css`
 
 ```
-src/
-├── components/
-│   ├── Navbar.jsx        # 상단 내비게이션
-│   ├── Hero.jsx          # 히어로 섹션
-│   ├── About.jsx         # 소개 섹션
-│   ├── Projects.jsx      # 프로젝트 카드 섹션
-│   ├── AIWorkflow.jsx    # AI 활용 방식 섹션
-│   ├── Writing.jsx       # 글쓰기 / 콘텐츠 섹션
-│   ├── TechStack.jsx     # 기술 스택 섹션
-│   └── Contact.jsx       # 연락처 섹션
-├── data/
-│   └── projects.js       # 프로젝트·스택·글쓰기 데이터 (배열 관리)
-├── App.jsx
-├── index.jsx
-└── index.css
+portfolio-site/
+├── public/               # 정적 파일
+│   ├── favicon.svg       # 브라우저 아이콘
+│   └── og-image.png      # 공유 미리보기 이미지
+├── index.html            # 문서 메타데이터
+└── src/
+    ├── components/
+    │   ├── Navbar.jsx        # 상단 내비게이션
+    │   ├── Hero.jsx          # 히어로 섹션
+    │   ├── About.jsx         # 소개 섹션
+    │   ├── Projects.jsx      # 프로젝트 카드 섹션
+    │   ├── AIWorkflow.jsx    # AI 활용 방식 섹션
+    │   ├── Writing.jsx       # 글쓰기 / 콘텐츠 섹션
+    │   ├── TechStack.jsx     # 기술 스택 섹션
+    │   └── Contact.jsx       # 연락처 섹션
+    ├── data/
+    │   └── projects.js       # 프로젝트·스택·글쓰기 데이터 (배열 관리)
+    ├── App.jsx            # 페이지 섹션 조립
+    ├── index.jsx          # 앱 진입점
+    └── index.css          # 공통 스타일
 ```
 
 ## 커스터마이즈

@@ -17,7 +17,14 @@ export function getWritingMonths() {
   // YYYY-MM-DD 형식을 직접 파싱하여 타임존 오프셋 영향을 제거
   const [sy, sm] = meta.writingStartDate.split("-").map(Number);
   const now = new Date();
-  return (now.getFullYear() - sy) * 12 + (now.getMonth() - (sm - 1));
+  return Math.max(0, (now.getFullYear() - sy) * 12 + (now.getMonth() - (sm - 1)));
+}
+
+export function formatWritingDuration(months) {
+  if (months < 12) return `${months}개월`;
+  const years = Math.floor(months / 12);
+  const rem = months % 12;
+  return rem === 0 ? `${years}년` : `${years}년 ${rem}개월`;
 }
 
 // Projects section data

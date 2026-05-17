@@ -16,8 +16,8 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll, { passive: true });
   }, []);
 
   useEffect(() => {
@@ -52,6 +52,7 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         <a
           href="#hero"
+          aria-label="홈으로 이동"
           className="text-sm font-mono text-gold-400 tracking-widest hover:text-gold-300 transition-colors"
         >
           DEV·CREATOR
@@ -65,6 +66,7 @@ export default function Navbar() {
               <li key={link.label}>
                 <a
                   href={link.href}
+                  aria-current={isActive ? "page" : undefined}
                   className={`text-sm transition-colors duration-200 tracking-wide ${
                     isActive
                       ? "text-gold-400"
@@ -82,8 +84,9 @@ export default function Navbar() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden flex flex-col gap-1.5 p-2"
-          aria-label="Toggle menu"
+          aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
           aria-expanded={menuOpen}
+          aria-controls="mobile-navigation"
         >
           <span
             className={`block w-5 h-0.5 bg-gray-400 transition-all duration-300 ${
@@ -105,7 +108,10 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-dark-800/95 backdrop-blur-md border-t border-dark-600/50">
+        <div
+          id="mobile-navigation"
+          className="md:hidden bg-dark-800/95 backdrop-blur-md border-t border-dark-600/50"
+        >
           <ul className="px-6 py-4 flex flex-col gap-4">
             {navLinks.map((link) => {
               const isActive = activeSection === link.href.slice(1);
@@ -114,6 +120,7 @@ export default function Navbar() {
                   <a
                     href={link.href}
                     onClick={() => setMenuOpen(false)}
+                    aria-current={isActive ? "page" : undefined}
                     className={`block text-sm transition-colors py-1 ${
                       isActive
                         ? "text-gold-400"

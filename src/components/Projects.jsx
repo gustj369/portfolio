@@ -1,10 +1,11 @@
+import { useState } from "react";
 import { projects } from "../data/projects";
 import { ArrowRightIcon, GitHubIcon } from "./icons";
 
 const statusConfig = {
   Playable:  "text-gold-400 border-gold-500/30 bg-gold-500/8",
   Live:      "text-gold-400 border-gold-500/30 bg-gold-500/8",
-  Completed: "text-gold-400 border-gold-500/30 bg-gold-500/8",
+  Completed: "text-gray-300 border-gray-500/30 bg-gray-500/8",
   Prototype:   "text-violet-400 border-violet-500/30 bg-violet-500/8",
   "In Progress": "text-violet-400 border-violet-500/30 bg-violet-500/8",
   Archive:   "text-gray-500 border-dark-400 bg-dark-600/30",
@@ -13,9 +14,12 @@ const statusConfig = {
 function StatusPill({ status }) {
   const cls = statusConfig[status] || statusConfig.Archive;
   return (
-    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-mono rounded border ${cls}`}>
+    <span
+      aria-label={`상태: ${status}`}
+      className={`inline-flex items-center gap-1.5 px-2 py-0.5 text-xs font-mono rounded border ${cls}`}
+    >
       {status === "In Progress" && (
-        <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse flex-shrink-0" />
+        <span aria-hidden="true" className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse flex-shrink-0" />
       )}
       {status}
     </span>
@@ -69,7 +73,7 @@ function ProjectCard({ project }) {
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`View ${title} on GitHub`}
+            aria-label={`${title} GitHub 보기`}
             className="p-1.5 rounded-lg border border-dark-400 hover:border-gold-500/60 text-gray-500 hover:text-gold-400 transition-all duration-200"
           >
             <GitHubIcon className="w-3.5 h-3.5" />
@@ -132,6 +136,7 @@ function ProjectCard({ project }) {
               href={primaryHref}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${title} ${demoLabel || "자세히 보기"}`}
               className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors duration-200 ${
                 isSlate ? "text-gray-500 hover:text-gray-300" : "text-gray-300 hover:text-gold-400"
               }`}
@@ -146,6 +151,7 @@ function ProjectCard({ project }) {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${title} ${link.label}`}
               className="inline-flex items-center gap-1.5 text-xs text-gray-400 hover:text-gray-200 transition-colors duration-200"
             >
               {link.label}
@@ -156,6 +162,7 @@ function ProjectCard({ project }) {
               href={github}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label={`${title} 코드 보기`}
               className="inline-flex items-center gap-1.5 text-xs text-gray-600 hover:text-gray-400 transition-colors duration-200"
             >
               코드 보기
@@ -168,6 +175,7 @@ function ProjectCard({ project }) {
 }
 
 export default function Projects() {
+  const [showArchive, setShowArchive] = useState(false);
   const statusOrder = ["Live", "Playable", "In Progress", "Prototype", "Completed"];
   const statusSummary = projects
     .filter((project) => project.status && project.status !== "Archive")
@@ -201,7 +209,10 @@ export default function Projects() {
               실제로 작동하는 형태까지 만듭니다.
             </p>
             {statusEntries.length > 0 && (
-              <div className="flex flex-wrap lg:justify-end gap-2">
+              <div
+                aria-label="프로젝트 상태 요약"
+                className="flex flex-wrap lg:justify-end gap-2"
+              >
                 {statusEntries.map((status) => (
                   <span
                     key={status}
@@ -215,11 +226,26 @@ export default function Projects() {
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
+        <div id="projects-grid" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {projects
+            .filter((project) => showArchive || project.status !== "Archive")
+            .map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
         </div>
+
+        {projects.some((project) => project.status === "Archive") && (
+          <div className="mt-8 flex justify-center">
+            <button
+              aria-expanded={showArchive}
+              aria-controls="projects-grid"
+              onClick={() => setShowArchive(!showArchive)}
+              className="text-xs font-mono text-gray-600 hover:text-gray-400 transition-colors duration-200"
+            >
+              {showArchive ? "접기 ↑" : "더 보기 ↓"}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

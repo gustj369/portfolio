@@ -1,4 +1,4 @@
-import { writingTopics, getWritingMonths, meta } from "../data/projects";
+import { writingTopics, getWritingMonths, formatWritingDuration, meta } from "../data/projects";
 import { InstagramIcon, ThreadsIcon, XIcon } from "./icons";
 
 function WritingCard({ topic }) {
@@ -83,7 +83,7 @@ export default function Writing() {
 
         {/* Headline */}
         <h2 className="text-3xl md:text-4xl font-semibold leading-snug mb-3">
-          <span className="text-gradient-gold">{months}개월</span>의 기록이
+          <span className="text-gradient-gold">{formatWritingDuration(months)}</span>의 기록이
           <br />
           저를 바꿨습니다.
         </h2>

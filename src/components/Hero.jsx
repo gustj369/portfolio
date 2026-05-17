@@ -1,4 +1,4 @@
-import { getWritingMonths, meta, projects } from "../data/projects";
+import { formatWritingDuration, getWritingMonths, meta, projects } from "../data/projects";
 import { ArrowRightIcon, ChevronDownIcon, GitHubIcon } from "./icons";
 
 export default function Hero() {
@@ -24,6 +24,7 @@ export default function Hero() {
     >
       {/* Background grid */}
       <div
+        aria-hidden="true"
         className="absolute inset-0 opacity-[0.02]"
         style={{
           backgroundImage:
@@ -33,10 +34,10 @@ export default function Hero() {
       />
 
       {/* Left glow blob */}
-      <div className="absolute top-1/3 -left-40 w-[480px] h-[480px] rounded-full bg-gold-600/6 blur-3xl pointer-events-none" />
+      <div aria-hidden="true" className="absolute top-1/3 -left-40 w-[480px] h-[480px] rounded-full bg-gold-600/6 blur-3xl pointer-events-none" />
       {/* Right glow — behind stat cards */}
-      <div className="absolute top-1/2 right-0 -translate-y-1/2 w-80 h-80 rounded-full bg-gold-500/5 blur-3xl pointer-events-none" />
-      <div className="absolute bottom-1/3 -right-20 w-64 h-64 rounded-full bg-violet-600/6 blur-3xl pointer-events-none" />
+      <div aria-hidden="true" className="absolute top-1/2 right-0 -translate-y-1/2 w-80 h-80 rounded-full bg-gold-500/5 blur-3xl pointer-events-none" />
+      <div aria-hidden="true" className="absolute bottom-1/3 -right-20 w-64 h-64 rounded-full bg-violet-600/6 blur-3xl pointer-events-none" />
 
       {/* Main content */}
       <div className="relative max-w-6xl mx-auto w-full pt-16 pb-28">
@@ -49,7 +50,7 @@ export default function Hero() {
             </p>
 
             <h1 className="text-4xl sm:text-5xl md:text-5xl lg:text-[3.5rem] font-semibold leading-[1.15] tracking-tight mb-7 animate-slide-up">
-              퇴근 후 {months}개월.
+              퇴근 후 {formatWritingDuration(months)}.
               <br />
               <span className="text-gradient-gold">아이디어 {visibleProjectCount}개.</span>
               <br />
@@ -90,6 +91,8 @@ export default function Hero() {
                 <img
                   src="/hyeonseo.png"
                   alt="현서 프로필"
+                  width="48"
+                  height="48"
                   className="w-full h-full object-cover object-right"
                 />
               </div>
@@ -155,7 +158,10 @@ export default function Hero() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-6 hidden md:flex flex-col items-center gap-3 opacity-50">
+      <div
+        aria-hidden="true"
+        className="absolute bottom-8 left-6 hidden md:flex flex-col items-center gap-3 opacity-50"
+      >
         <div className="w-px h-8 bg-gradient-to-b from-gold-500/70 to-transparent" />
         <span
           className="text-[10px] font-mono text-gold-500 tracking-[0.25em]"
