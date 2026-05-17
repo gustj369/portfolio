@@ -89,13 +89,8 @@ export default function TechStack() {
               <p className="text-xs font-mono text-violet-400 tracking-widest mb-2.5">
                 {currentlyExploring.title}
               </p>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                {currentlyExploring.description.split("\n").map((line, index) => (
-                  <span key={`${index}-${line}`}>
-                    {index > 0 && <br />}
-                    {line}
-                  </span>
-                ))}
+              <p className="text-sm text-gray-500 leading-relaxed whitespace-pre-line">
+                {currentlyExploring.description}
               </p>
             </div>
 

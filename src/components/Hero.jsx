@@ -14,7 +14,7 @@ export default function Hero() {
   const mobileStats = [
     { value: `${months} MONTHS`, label: "퇴근 후 기록" },
     { value: `${visibleProjectCount} PROJECTS`, label: "결과물"       },
-    { value: "AI WORKFLOW",      label: null           },
+    { value: "AI WORKFLOW",      label: "도구·방식"     },
   ];
 
   return (

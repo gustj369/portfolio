@@ -90,7 +90,7 @@ export default function Writing() {
 
         {/* Subtext */}
         <p className="text-sm text-gray-600 leading-relaxed mb-6">
-          드라마틱 라이프(@94hyeonseo) — 평범한 직장인의 하루를 조금 더 솔직하게 남기는 기록입니다.
+          드라마틱 라이프({meta.social.handle}) — 평범한 직장인의 하루를 조금 더 솔직하게 남기는 기록입니다.
         </p>
 
         {/* Body copy */}
