@@ -77,33 +77,5 @@ portfolio-site/
     └── index.css          # 공통 스타일
 ```
 
-## 커스터마이즈
 
-### 프로젝트 수정
-`src/data/projects.js`의 `projects` 배열을 수정하면 Projects 섹션이 자동으로 업데이트됩니다.
-
-프로젝트 항목은 아래 필드를 기준으로 관리합니다.
-
-- 필수: `id`, `title`, `status`, `description`, `tags`, `color`
-- 선택: `sublabel`, `keyBuild`, `github`, `demo`, `demoLabel`, `extraLinks`, `featured`
-- `status`는 `Live`, `Playable`, `In Progress`, `Prototype`, `Completed`, `Archive` 기준으로 사용합니다.
-- `Archive` 상태는 Hero의 프로젝트 수와 Projects 상태 카운트에서 제외됩니다.
-- `demo`는 카드의 기본 CTA 링크로 사용하며, 값이 없으면 `github`가 기본 CTA 역할을 대신합니다.
-- `github`는 카드 상단 아이콘과 보조 코드 링크에 사용합니다.
-- `extraLinks`는 기본 CTA와 별도로 함께 보여줄 추가 링크 목록입니다.
-
-### 링크 교체
-기본 링크와 이메일은 `src/data/projects.js`의 `meta` 객체에서 관리합니다.
-
-- `Contact.jsx` — `meta` 기반 GitHub / Instagram / Threads / Email 링크
-- `Hero.jsx` — `meta.social.github` 기반 GitHub 버튼 링크
-- `Projects.jsx` — 각 프로젝트의 `github`, `demo`, `extraLinks` 링크
-
-### 메타태그 수정
-페이지 타이틀, description, Open Graph, Twitter Card 정보는 루트 `index.html`에서 관리합니다.
-배포 주소나 대표 이미지가 바뀌면 `og:url`, `og:image`, `twitter:image`, `<title>`, description을 함께 확인합니다.
-
-### 색상 테마
-`tailwind.config.js`의 `colors` 섹션에서 골드(`gold`)와 바이올렛(`violet`) 컬러를 조정할 수 있습니다.
-
-- 바로 분리하기보다 `Projects.jsx`, `AIWorkflow.jsx`, `Writing.jsx`, `TechStack.jsx`, `Contact.jsx`의 카드 스타일 반복을 먼저 비교합니다.
+- 바로 분리하기보다 `Projects.jsx`, `AIWorkflow.jsx`, `Writing.jsx`, `TechStack.jsx`, `
