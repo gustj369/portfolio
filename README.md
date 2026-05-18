@@ -76,6 +76,3 @@ portfolio-site/
     ├── index.jsx          # 앱 진입점
     └── index.css          # 공통 스타일
 ```
-
-
-- 바로 분리하기보다 `Projects.jsx`, `AIWorkflow.jsx`, `Writing.jsx`, `TechStack.jsx`, `
