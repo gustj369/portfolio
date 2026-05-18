@@ -38,7 +38,7 @@ export const projects = [
   {
     id: 1,
     title: "Legend League",
-    status: "Playable",
+    status: "Archive",
     sublabel: "직접 만든 리그형 전략 미니게임",
     description:
       "리그를 직접 운영하고 싶었는데 마땅한 도구가 없었어요. 그래서 만들었습니다. JavaScript로 경기 진행, 결과 계산, 리그 흐름을 구현했고 실행 가능한 파일로 패키징했습니다.",
@@ -68,7 +68,7 @@ export const projects = [
   {
     id: 3,
     title: "Second Brain Desktop",
-    status: "In Progress",
+    status: "Archive",
     sublabel: "생각과 기록을 연결하는 개인 지식관리 앱",
     description:
       "기록은 많은데 다시 꺼내 쓴 적이 없었어요. 흩어진 메모가 연결되는 구조를 실험하고 있습니다.",
