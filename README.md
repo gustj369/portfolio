@@ -5,40 +5,10 @@ AI와 개발로 작은 결과물을 만드는 개발자의 포트폴리오 웹�
 
 ## 기술 스택
 
-- **React** — 컴포넌트 기반 UI
-- **Tailwind CSS v3** — 유틸리티 퍼스트 스타일링
-- **Vite** — 개발 서버와 빌드 도구
-
-## 실행 방법
-
-```bash
-# 의존성 설치
-npm install
-
-# 개발 서버 실행
-npm start
-
-# 프로덕션 빌드
-npm run build
-
-# 빌드 결과 미리보기
-npm run preview
-```
-
-## 수정 후 확인
-
-- 공통: `npm start`로 실행 후 Hero, Projects, AI Workflow, Writing, Tech Stack, Contact 섹션을 확인합니다.
-- 내비게이션: 상단 메뉴를 클릭했을 때 각 섹션 제목이 고정 헤더에 가리지 않고 자연스럽게 보이는지 확인합니다.
-- 데이터 수정: Projects 카드 수, 상태 카운트, 외부 링크 버튼이 의도대로 보이는지 확인합니다.
-- 스타일 수정: 데스크톱과 모바일 폭에서 텍스트 줄바꿈, 간격, 버튼 영역을 확인합니다.
-- 배포 전: `npm run build`를 실행하고, 필요하면 `npm run preview`로 빌드 결과를 확인합니다.
-
-### 모바일 밀도 확인 기준
-
-- 모바일 섹션 여백은 넓게 보이되, 카드가 길게 반복되는 구간은 과하게 늘리지 않습니다.
-- 카드 내부 여백은 내용량에 맞춰 조절하고, AI Workflow·Projects·Tech Stack처럼 카드가 많은 섹션은 스크롤 피로를 줄입니다.
-- 주요 CTA는 한 줄 전체 폭을 사용할 수 있지만, 보조 SNS 링크는 2열 또는 작은 버튼 묶음으로 확인합니다.
-- 모바일 확인 시 Projects 카드, AI Workflow 단계 카드, Tech Stack 카드, Contact 버튼 배열을 우선 점검합니다.
+- **React**, **Vite** — 기반 웹 프로젝트
+- **Tailwind CSS v3** — 기반 UI 구성
+- **Vercel** — 배포
+- AI 코딩 도구를 활용한 바이브 코딩 방식으로 제작
 
 ## 프로젝트 구조
 
