@@ -107,4 +107,3 @@ portfolio-site/
 `tailwind.config.js`의 `colors` 섹션에서 골드(`gold`)와 바이올렛(`violet`) 컬러를 조정할 수 있습니다.
 
 - 바로 분리하기보다 `Projects.jsx`, `AIWorkflow.jsx`, `Writing.jsx`, `TechStack.jsx`, `Contact.jsx`의 카드 스타일 반복을 먼저 비교합니다.
-- 공통화가 필요해지면 작은 `Card` 또는 카드 스타일 유틸리티로 묶는 것을 검토합니다
