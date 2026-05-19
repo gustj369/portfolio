@@ -138,7 +138,11 @@ function ProjectCard({ project }) {
               rel="noopener noreferrer"
               aria-label={`${title} ${demoLabel || "자세히 보기"}`}
               className={`inline-flex items-center gap-1.5 text-xs font-medium transition-colors duration-200 ${
-                isSlate ? "text-gray-500 hover:text-gray-300" : "text-gray-300 hover:text-gold-400"
+                isSlate
+                  ? "text-gray-500 hover:text-gray-300"
+                  : demoLabel === "구매하기"
+                  ? "text-gold-400 hover:text-gold-300"
+                  : "text-gray-300 hover:text-gold-400"
               }`}
             >
               {demoLabel || "자세히 보기"}
@@ -242,7 +246,9 @@ export default function Projects() {
               onClick={() => setShowArchive(!showArchive)}
               className="text-xs font-mono text-gray-600 hover:text-gray-400 transition-colors duration-200"
             >
-              {showArchive ? "접기 ↑" : "더 보기 ↓"}
+              {showArchive
+                ? "접기 ↑"
+                : `더 보기 ${projects.filter((p) => p.status === "Archive").length}개 ↓`}
             </button>
           </div>
         )}

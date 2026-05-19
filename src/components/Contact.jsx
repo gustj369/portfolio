@@ -5,7 +5,6 @@ import {
   LinkedInIcon,
   MailIcon,
   ThreadsIcon,
-  XIcon,
 } from "./icons";
 
 export default function Contact() {

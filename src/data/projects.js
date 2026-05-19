@@ -295,6 +295,7 @@ export const focusAreas = [
   "개인 지식관리 앱과 생산성 시스템",
   "인스타 카드뉴스 콘텐츠",
   "글쓰기와 생각 정리",
+  "유료 콘텐츠 제작",
 ];
 
 // Tech Stack 섹션 보조 데이터
@@ -311,4 +312,5 @@ export const openToItems = [
   "AI Workflow",
   "Automation",
   "Content System",
+  "PDF 제작",
 ];

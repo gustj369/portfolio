@@ -1,5 +1,5 @@
 import { writingTopics, getWritingMonths, formatWritingDuration, meta } from "../data/projects";
-import { InstagramIcon, ThreadsIcon, XIcon } from "./icons";
+import { InstagramIcon, ThreadsIcon } from "./icons";
 
 function WritingCard({ topic }) {
   const isGold   = topic.accent === "gold";
