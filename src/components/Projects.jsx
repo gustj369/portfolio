@@ -234,7 +234,7 @@ export default function Projects() {
           {projects
             .filter((project) => showArchive || project.status !== "Archive")
             .map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard key={project.title} project={project} />
             ))}
         </div>
 

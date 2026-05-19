@@ -1,4 +1,4 @@
-import { flowSteps, workflowResultProjects, workflowSteps, workflowTools } from "../data/projects";
+import { flowSteps, projects, workflowSteps, workflowTools } from "../data/projects";
 
 export default function AIWorkflow() {
   return (
@@ -99,13 +99,13 @@ export default function AIWorkflow() {
           </span>
           <div className="w-3 h-px bg-dark-500/60 hidden sm:block" />
           <div className="flex gap-2 flex-wrap">
-            {workflowResultProjects.map((p) => (
+            {projects.filter((p) => p.workflow).map((p) => (
               <a
-                key={p.name}
-                href={p.href}
+                key={p.title}
+                href="#projects"
                 className="px-2.5 py-1 text-xs font-mono rounded border border-dark-400/50 text-gray-600 hover:text-gray-400 hover:border-dark-300/50 transition-colors duration-200"
               >
-                {p.name}
+                {p.title}
               </a>
             ))}
           </div>

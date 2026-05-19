@@ -35,7 +35,6 @@ export function formatWritingDuration(months) {
 // - keyBuild: 태그 위에 작은 제작 포인트 문장으로 표시됩니다.
 export const projects = [
   {
-    id: 1,
     title: "Legend League",
     status: "Archive",
     sublabel: "직접 만든 리그형 전략 미니게임",
@@ -48,9 +47,9 @@ export const projects = [
     demoLabel: "실행하기",
     color: "gold",
     featured: true,
+    workflow: true,
   },
   {
-    id: 2,
     title: "Asset Portfolio Dashboard",
     status: "Live",
     sublabel: "내 자산 흐름을 한눈에 보는 대시보드",
@@ -63,9 +62,9 @@ export const projects = [
     demoLabel: "라이브 보기",
     color: "violet",
     featured: true,
+    workflow: true,
   },
   {
-    id: 3,
     title: "Second Brain Desktop",
     status: "Archive",
     sublabel: "생각과 기록을 연결하는 개인 지식관리 앱",
@@ -79,7 +78,6 @@ export const projects = [
     color: "gold",
   },
   {
-    id: 4,
     title: "퇴근 후 나를 키우는 10개의 질문",
     status: "Live",
     sublabel: "처음 만든 유료 PDF — 회고 질문 10개와 워크시트",
@@ -94,7 +92,6 @@ export const projects = [
     featured: true,
   },
   {
-    id: 5,
     title: "AI 영상 캐릭터 고정",
     status: "Live",
     sublabel: "AI 영상에서 캐릭터를 일관되게 유지하는 실전 가이드",
@@ -114,7 +111,6 @@ export const projects = [
     color: "violet",
   },
   {
-    id: 7,
     title: "DEV·CREATOR Portfolio",
     status: "Live",
     sublabel: "AI와 개발 자산을 정리한 개인 포트폴리오",
@@ -127,9 +123,9 @@ export const projects = [
     demoLabel: "사이트 보기",
     color: "gold",
     featured: true,
+    workflow: true,
   },
   {
-    id: 8,
     title: "More on GitHub",
     status: "Archive",
     sublabel: "계속 쌓아가는 작은 코드 자산",
@@ -273,11 +269,6 @@ export const workflowTools = [
   { name: "Codex",  role: "코드 구조 · 구현 보조" },
 ];
 
-export const workflowResultProjects = [
-  { name: "Legend League",             href: "#projects" },
-  { name: "Asset Portfolio Dashboard", href: "#projects" },
-  { name: "DEV·CREATOR Portfolio",     href: "#projects" },
-];
 
 // About 섹션 데이터
 export const identityTags = [
