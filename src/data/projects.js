@@ -8,7 +8,7 @@ export const meta = {
     threads:     "https://www.threads.com/@94hyeonseo",
     handle:      "@94hyeonseo",
     githubLabel: "github.com/gustj369",
-    linkedin:    "https://www.linkedin.com/in/%ED%98%84%EC%84%9C-%EB%B0%95-959137267/",
+    linkedin:    "https://www.linkedin.com/in/94hyeonseo",
   },
 };
 
