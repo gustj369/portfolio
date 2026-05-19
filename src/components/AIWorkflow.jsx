@@ -85,7 +85,7 @@ export default function AIWorkflow() {
               </h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-500 leading-relaxed">
+              <p className="text-sm text-gray-500 leading-relaxed whitespace-pre-line">
                 {step.description}
               </p>
             </div>

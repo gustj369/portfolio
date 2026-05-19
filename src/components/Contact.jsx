@@ -105,18 +105,6 @@ export default function Contact() {
                     Threads 보기
                   </a>
                 )}
-                {meta.social.x && (
-                  <a
-                    href={meta.social.x}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="X 보기"
-                    className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-dark-400/60 text-gray-500 text-sm hover:border-dark-300/60 hover:text-gray-400 transition-all duration-200 md:hover:-translate-y-0.5"
-                  >
-                    <XIcon />
-                    X 보기
-                  </a>
-                )}
                 {meta.social.linkedin && (
                   <a
                     href={meta.social.linkedin}

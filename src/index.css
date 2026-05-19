@@ -94,6 +94,12 @@ body {
   .animate-scroll-drop {
     animation: none;
   }
+  .animate-fade-in {
+    animation: none;
+  }
+  .animate-slide-up {
+    animation: none;
+  }
   html {
     scroll-behavior: auto;
   }

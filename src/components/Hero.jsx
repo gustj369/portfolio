@@ -117,7 +117,7 @@ export default function Hero() {
                 alt="현서 프로필"
                 width="260"
                 height="347"
-                fetchpriority="high"
+                fetchPriority="high"
                 className="w-full object-cover object-right"
                 style={{ aspectRatio: "3 / 4", maxHeight: "320px" }}
               />
