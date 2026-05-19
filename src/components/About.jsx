@@ -33,11 +33,6 @@ export default function About() {
             </h2>
             <div className="space-y-4 md:space-y-5 text-gray-400 text-base leading-relaxed">
               <p>
-                완벽해질 때까지 미루다가 아무것도 안 만들었던 적이 있어요.
-                <br />
-                그때부터 방식을 바꿨습니다.
-              </p>
-              <p>
                 6년 직장 생활을 하면서, 퇴근 후에 이걸 만들었어요.
               </p>
               <p>

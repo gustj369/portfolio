@@ -178,9 +178,10 @@ function ProjectCard({ project }) {
   );
 }
 
+const statusOrder = ["Live", "Playable", "In Progress", "Prototype", "Completed"];
+
 export default function Projects() {
   const [showArchive, setShowArchive] = useState(false);
-  const statusOrder = ["Live", "Playable", "In Progress", "Prototype", "Completed"];
   const statusSummary = projects
     .filter((project) => project.status && project.status !== "Archive")
     .reduce((summary, project) => {
