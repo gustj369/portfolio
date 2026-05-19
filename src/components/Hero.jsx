@@ -82,13 +82,16 @@ export default function Hero() {
             {/* Mobile profile photo */}
             <div className="flex md:hidden items-center gap-3 mt-8 mb-2">
               <div className="w-12 h-12 rounded-full overflow-hidden border border-gold-500/30 flex-shrink-0">
-                <img
-                  src="/hyeonseo.png"
-                  alt="현서 프로필"
-                  width="48"
-                  height="48"
-                  className="w-full h-full object-cover object-right"
-                />
+                <picture>
+                  <source type="image/webp" srcSet="/hyeonseo.webp" />
+                  <img
+                    src="/hyeonseo.png"
+                    alt="현서 프로필"
+                    width="48"
+                    height="48"
+                    className="w-full h-full object-cover object-right"
+                  />
+                </picture>
               </div>
               <span className="text-xs font-mono text-gray-600 tracking-[0.2em]">{meta.social.handle}</span>
             </div>
@@ -112,15 +115,18 @@ export default function Hero() {
 
             {/* Profile photo */}
             <div className="rounded-xl overflow-hidden border border-gold-500/20 bg-dark-800/40">
-              <img
-                src="/hyeonseo.png"
-                alt="현서 프로필"
-                width="260"
-                height="347"
-                fetchPriority="high"
-                className="w-full object-cover object-right"
-                style={{ aspectRatio: "3 / 4", maxHeight: "320px" }}
-              />
+              <picture>
+                <source type="image/webp" srcSet="/hyeonseo.webp" />
+                <img
+                  src="/hyeonseo.png"
+                  alt="현서 프로필"
+                  width="260"
+                  height="347"
+                  fetchPriority="high"
+                  className="w-full object-cover object-right"
+                  style={{ aspectRatio: "3 / 4", maxHeight: "320px" }}
+                />
+              </picture>
             </div>
 
             <div className="mt-4 grid gap-3">
