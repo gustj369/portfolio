@@ -1,4 +1,4 @@
-import { writingTopics, getWritingMonths, formatWritingDuration, meta } from "../data/projects";
+import { writingTopics, formatWritingDuration, meta } from "../data/projects";
 import { InstagramIcon, ThreadsIcon } from "./icons";
 
 function WritingCard({ topic }) {
@@ -66,8 +66,7 @@ function WritingCard({ topic }) {
   );
 }
 
-export default function Writing() {
-  const months = getWritingMonths();
+export default function Writing({ months }) {
   const featuredTopic = writingTopics.find((t) => t.featured);
   const restTopics = writingTopics.filter((t) => !t.featured);
 

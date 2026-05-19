@@ -1,8 +1,7 @@
-import { formatWritingDuration, getWritingMonths, meta, projects } from "../data/projects";
+import { formatWritingDuration, meta, projects } from "../data/projects";
 import { ArrowRightIcon, ChevronDownIcon, GitHubIcon } from "./icons";
 
-export default function Hero() {
-  const months = getWritingMonths();
+export default function Hero({ months }) {
   const visibleProjectCount = projects.filter((project) => project.status !== "Archive").length;
 
   const statCards = [

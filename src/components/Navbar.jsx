@@ -32,7 +32,7 @@ export default function Navbar() {
         ([entry]) => {
           if (entry.isIntersecting) setActiveSection(id);
         },
-        { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
+        { rootMargin: "-10% 0px -50% 0px", threshold: 0 }
       );
       obs.observe(el);
       observers.push(obs);
