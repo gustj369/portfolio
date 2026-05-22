@@ -86,7 +86,7 @@ export const projects = [
     keyBuild: "회고 질문 10개 · 워크시트 · 유료 PDF",
     tags: ["PDF", "Self Growth", "Worksheet", "1,900원"],
     github: null,
-    demo: "https://litt.ly/94hyeonseo/sale/qUbQ2o8",
+    demo: "https://litt.ly/94hyeonseo/sale/qUbQ2o8/sale/BzCOMCR",
     demoLabel: "구매하기",
     color: "gold",
     featured: true,
