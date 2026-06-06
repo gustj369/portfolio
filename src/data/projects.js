@@ -78,20 +78,6 @@ export const projects = [
     color: "gold",
   },
   {
-    title: "퇴근 후 나를 키우는 10개의 질문",
-    status: "Live",
-    sublabel: "처음 만든 유료 PDF — 회고 질문 10개와 워크시트",
-    description:
-      "퇴근은 했는데 마음은 퇴근하지 못 한 날, 저한테 질문을 던졌어요. 하루를 그냥 흘려보내지 않기 위한 회고 질문 10개와 워크시트를 작은 PDF로 정리했습니다. 처음으로 만든 유료 PDF예요.",
-    keyBuild: "회고 질문 10개 · 워크시트 · 유료 PDF",
-    tags: ["PDF", "Self Growth", "Worksheet", "1,900원"],
-    github: null,
-    demo: "https://litt.ly/94hyeonseo/sale/qUbQ2o8/sale/BzCOMCR",
-    demoLabel: "구매하기",
-    color: "gold",
-    featured: true,
-  },
-  {
     title: "AI 영상 캐릭터 고정",
     status: "Live",
     sublabel: "AI 영상에서 캐릭터를 일관되게 유지하는 실전 가이드",
