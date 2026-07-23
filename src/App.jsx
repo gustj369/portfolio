@@ -1,5 +1,4 @@
 import "./App.css";
-import { getWritingMonths } from "./data/projects";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -10,7 +9,7 @@ import TechStack from "./components/TechStack";
 import Contact from "./components/Contact";
 
 function App() {
-  const months = getWritingMonths();
+  const months = 12;
 
   return (
     <div className="bg-dark-900 text-gray-100 min-h-screen">
