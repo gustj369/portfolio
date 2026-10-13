@@ -64,21 +64,23 @@ function ProjectCard({ project }) {
 
   return (
     <div className={`${cardBase} ${cardAccent}`}>
-      {/* Status row */}
-      <div className="flex items-center justify-between">
-        <StatusPill status={status} />
-        {!isSlate && !!github && (
-          <a
-            href={github}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${title} GitHub 보기`}
-            className="p-1.5 rounded-lg border border-dark-400 hover:border-gold-500/60 text-gray-500 hover:text-gold-400 transition-all duration-200"
-          >
-            <GitHubIcon className="w-3.5 h-3.5" />
-          </a>
-        )}
-      </div>
+      {/* Status row — slate(링크 카드)는 프로젝트가 아니므로 상태 표시 생략 */}
+      {!isSlate && (
+        <div className="flex items-center justify-between">
+          <StatusPill status={status} />
+          {!!github && (
+            <a
+              href={github}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${title} GitHub 보기`}
+              className="p-1.5 rounded-lg border border-dark-400 hover:border-gold-500/60 text-gray-500 hover:text-gold-400 transition-all duration-200"
+            >
+              <GitHubIcon className="w-3.5 h-3.5" />
+            </a>
+          )}
+        </div>
+      )}
 
       {/* Title */}
       <h3 className={`text-base font-semibold leading-snug transition-colors duration-200 ${titleAccent}`}>
