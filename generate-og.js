@@ -26,10 +26,6 @@ const svgLeft = `
       <stop offset="50%" style="stop-color:#d4a843"/>
       <stop offset="100%" style="stop-color:#b8912a"/>
     </linearGradient>
-    <linearGradient id="fadeRight" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="60%" style="stop-color:#0a0a0a;stop-opacity:0"/>
-      <stop offset="100%" style="stop-color:#0a0a0a;stop-opacity:1"/>
-    </linearGradient>
   </defs>
 
   <!-- 배경 -->
@@ -89,9 +85,20 @@ const svgLeft = `
   <!-- 하단 골드 라인 -->
   <rect x="80" y="${H - 92}" width="${W - 160}" height="1"
         fill="#d4a843" opacity="0.15"/>
+</svg>
+`;
 
-  <!-- 우측 사진 영역 페이드 오버레이 (자연스러운 경계) -->
-  <rect x="${W - PHOTO_W - 80}" y="0" width="120" height="${H}" fill="url(#fadeRight)"/>
+// 사진 왼쪽 경계를 배경에 녹이는 페이드 — 사진 위에 합성
+const FADE_W = 140;
+const svgFade = `
+<svg xmlns="http://www.w3.org/2000/svg" width="${FADE_W}" height="${H}">
+  <defs>
+    <linearGradient id="fade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f0f0f;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0f0f0f;stop-opacity:0"/>
+    </linearGradient>
+  </defs>
+  <rect width="${FADE_W}" height="${H}" fill="url(#fade)"/>
 </svg>
 `;
 
@@ -102,17 +109,25 @@ async function generate() {
   // SVG 배경 렌더링
   const bg = await sharp(Buffer.from(svgLeft)).png().toBuffer();
 
-  // 프로필 사진: 우측에 맞게 리사이즈 (세로 전체 채움)
+  // 프로필 사진: hyeonseo.png(1281×707)는 우측에 인물이 있는 배너 이미지라
+  // 배너 글자("Developer"의 끝, x≈810)가 끝난 뒤인 x=830부터 인물 영역만 잘라 사용
   const photo = await sharp(photoPath)
-    .resize(PHOTO_W, H, { fit: 'cover', position: 'centre' })
+    .extract({ left: 830, top: 0, width: 451, height: 618 })
+    .resize(PHOTO_W, H)
     .png()
     .toBuffer();
 
-  // 배경 + 사진 합성
+  // 배경 + 사진 + 경계 페이드 합성
   const result = await sharp(bg)
     .composite([
       {
         input: photo,
+        left: W - PHOTO_W,
+        top: 0,
+        blend: 'over',
+      },
+      {
+        input: Buffer.from(svgFade),
         left: W - PHOTO_W,
         top: 0,
         blend: 'over',

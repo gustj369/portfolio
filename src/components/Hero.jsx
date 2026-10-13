@@ -7,7 +7,7 @@ export default function Hero({ months }) {
   const statCards = [
     { value: `${months} MONTHS`,           label: "퇴근 후 쌓은 기록",        mobileLabel: "퇴근 후 기록", mono: true  },
     { value: `${visibleProjectCount} PROJECTS`, label: "직접 만들고 개선한 결과물", mobileLabel: "결과물",       mono: true  },
-    { value: "AI WORKFLOW",                label: "ChatGPT · Codex · GitHub",  mobileLabel: "도구·방식",   mono: false },
+    { value: "AI WORKFLOW",                label: "ChatGPT · Codex · GitHub", mobileLabel: "도구·방식",   mono: false },
   ];
 
   return (
@@ -82,13 +82,13 @@ export default function Hero({ months }) {
             <div className="flex md:hidden items-center gap-3 mt-8 mb-2">
               <div className="w-12 h-12 rounded-full overflow-hidden border border-gold-500/30 flex-shrink-0">
                 <picture>
-                  <source type="image/webp" srcSet="/hyeonseo.webp" />
+                  <source type="image/webp" srcSet="/profile.webp" />
                   <img
-                    src="/hyeonseo.png"
+                    src="/profile.jpg"
                     alt="현서 프로필"
                     width="48"
                     height="48"
-                    className="w-full h-full object-cover object-right"
+                    className="w-full h-full object-cover object-top"
                   />
                 </picture>
               </div>
@@ -115,14 +115,14 @@ export default function Hero({ months }) {
             {/* Profile photo */}
             <div className="rounded-xl overflow-hidden border border-gold-500/20 bg-dark-800/40">
               <picture>
-                <source type="image/webp" srcSet="/hyeonseo.webp" />
+                <source type="image/webp" srcSet="/profile.webp" />
                 <img
-                  src="/hyeonseo.png"
+                  src="/profile.jpg"
                   alt="현서 프로필"
                   width="260"
                   height="347"
                   fetchPriority="high"
-                  className="w-full object-cover object-right"
+                  className="w-full object-cover object-top"
                   style={{ aspectRatio: "3 / 4", maxHeight: "320px" }}
                 />
               </picture>
