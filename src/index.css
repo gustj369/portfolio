@@ -51,17 +51,6 @@ body {
     background-clip: text;
   }
 
-  .text-gradient-purple {
-    background: linear-gradient(135deg, #a78bfa 0%, #8b6fe8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  .border-gradient-gold {
-    border-image: linear-gradient(135deg, #d4a843, #8b6fe8) 1;
-  }
-
   .card-dark {
     background: rgba(17, 17, 17, 0.8);
     border: 1px solid rgba(61, 61, 61, 0.5);

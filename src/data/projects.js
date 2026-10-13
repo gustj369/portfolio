@@ -1,6 +1,5 @@
 // Shared site metadata
 export const meta = {
-  writingStartDate: "2025-08-01",
   email: "gustj258@gmail.com",
   social: {
     github:      "https://github.com/gustj369",
@@ -11,13 +10,6 @@ export const meta = {
     linkedin:    "https://www.linkedin.com/in/94hyeonseo",
   },
 };
-
-export function getWritingMonths() {
-  // YYYY-MM-DD 형식을 직접 파싱하여 타임존 오프셋 영향을 제거
-  const [sy, sm] = meta.writingStartDate.split("-").map(Number);
-  const now = new Date();
-  return Math.max(0, (now.getFullYear() - sy) * 12 + (now.getMonth() - (sm - 1)));
-}
 
 export function formatWritingDuration(months) {
   if (months < 12) return `${months}개월`;
