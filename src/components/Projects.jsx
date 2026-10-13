@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { projects } from "../data/projects";
 import { ArrowRightIcon, GitHubIcon } from "./icons";
 
@@ -181,7 +180,6 @@ function ProjectCard({ project }) {
 const statusOrder = ["Live", "Playable", "In Progress", "Prototype", "Completed"];
 
 export default function Projects() {
-  const [showArchive, setShowArchive] = useState(false);
   const statusSummary = projects
     .filter((project) => project.status && project.status !== "Archive")
     .reduce((summary, project) => {
@@ -231,28 +229,11 @@ export default function Projects() {
           </div>
         </div>
 
-        <div id="projects-grid" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {projects
-            .filter((project) => showArchive || project.status !== "Archive")
-            .map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
+          ))}
         </div>
-
-        {projects.some((project) => project.status === "Archive") && (
-          <div className="mt-8 flex justify-center">
-            <button
-              aria-expanded={showArchive}
-              aria-controls="projects-grid"
-              onClick={() => setShowArchive(!showArchive)}
-              className="text-xs font-mono text-gray-600 hover:text-gray-400 transition-colors duration-200"
-            >
-              {showArchive
-                ? "접기 ↑"
-                : `더 보기 ${projects.filter((p) => p.status === "Archive").length}개 ↓`}
-            </button>
-          </div>
-        )}
       </div>
     </section>
   );
