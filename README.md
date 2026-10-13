@@ -20,6 +20,31 @@ AI와 개발로 작은 결과물을 만드는 개발자의 포트폴리오 웹�
 - **Vercel** — 배포
 - AI 코딩 도구를 활용한 바이브 코딩 방식으로 제작
 
+## 실행 방법
+
+Node.js(LTS)가 필요합니다.
+
+```bash
+npm install      # 의존성 설치 (처음 한 번)
+npm start        # 개발 서버 실행 → http://localhost:5173
+npm run build    # 배포용 빌드 → dist/
+npm run preview  # 빌드 결과 미리보기
+```
+
+배포는 Vercel에서 `npm run build` 결과(`dist/`)를 사용합니다 (`vercel.json`).
+
+> 프로젝트가 OneDrive 폴더 안에 있으면 개발 서버가 파일 변경을 놓칠 때가 있습니다. 수정이 화면에 반영되지 않으면 개발 서버를 재시작하세요.
+
+## 이미지 생성 스크립트
+
+`public/hyeonseo.png`(인물 사진이 포함된 배너)와 `public/favicon.svg`를 원본으로 사용합니다. 원본을 바꾼 뒤 아래 스크립트를 다시 실행하세요.
+
+| 명령 | 생성 파일 | 용도 |
+| --- | --- | --- |
+| `node generate-og.js` | `og-image.png` | 링크 공유 미리보기 (1200×630) |
+| `node generate-profile.js` | `profile.webp`, `profile.jpg` | Hero 프로필 사진 |
+| `node generate-icons.js` | `favicon.ico`, `logo192.png`, `logo512.png`, `apple-touch-icon.png` | 브라우저·홈 화면 아이콘 |
+
 ## 프로젝트 구조
 
 - 실제 페이지 흐름: Hero → About → Projects → AI Workflow → Writing → Tech Stack → Contact
@@ -37,8 +62,11 @@ AI와 개발로 작은 결과물을 만드는 개발자의 포트폴리오 웹�
 ```
 portfolio-site/
 ├── public/               # 정적 파일
-│   ├── favicon.svg       # 브라우저 아이콘
+│   ├── favicon.svg       # 브라우저 아이콘 (아이콘 생성 원본)
+│   ├── hyeonseo.png      # 인물 배너 (프로필·OG 이미지 생성 원본)
+│   ├── profile.webp      # Hero 프로필 사진
 │   └── og-image.png      # 공유 미리보기 이미지
+├── generate-*.js         # 이미지 생성 스크립트
 ├── index.html            # 문서 메타데이터
 └── src/
     ├── components/
