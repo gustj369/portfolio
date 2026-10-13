@@ -1,5 +1,6 @@
 // Shared site metadata
 export const meta = {
+  careerStartYear: 2020,
   email: "gustj258@gmail.com",
   social: {
     github:      "https://github.com/gustj369",
@@ -10,6 +11,11 @@ export const meta = {
     linkedin:    "https://www.linkedin.com/in/94hyeonseo",
   },
 };
+
+// 직장 연차 (한국식 N년차: 입사 연도 = 1년차, 매년 1월 1일에 +1)
+export function getCareerYears() {
+  return new Date().getFullYear() - meta.careerStartYear + 1;
+}
 
 export function formatWritingDuration(months) {
   if (months < 12) return `${months}개월`;

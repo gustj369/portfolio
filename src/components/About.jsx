@@ -1,4 +1,4 @@
-import { identityTags, focusAreas } from "../data/projects";
+import { identityTags, focusAreas, getCareerYears } from "../data/projects";
 
 function IdentityTag({ label, accent }) {
   const cls =
@@ -33,7 +33,7 @@ export default function About() {
             </h2>
             <div className="space-y-4 md:space-y-5 text-gray-400 text-base leading-relaxed">
               <p>
-                7년 직장 생활을 하면서, 퇴근 후에 이걸 만들었어요.
+                {getCareerYears()}년 직장 생활을 하면서, 퇴근 후에 이걸 만들었어요.
               </p>
               <p>
                 완벽해질 때까지 미루기보다 작게 만들고,
