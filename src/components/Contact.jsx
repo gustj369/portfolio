@@ -128,7 +128,7 @@ export default function Contact() {
               <p className="text-xs font-mono text-gold-500/80 tracking-widest mb-1.5">
                 OPEN TO
               </p>
-              <p className="text-[10px] text-gray-700 mb-4 leading-relaxed">
+              <p className="text-[10px] text-gray-600 mb-4 leading-relaxed">
                 이런 작업에 관심이 있습니다.
               </p>
               <div className="flex flex-wrap gap-2">
@@ -152,7 +152,7 @@ export default function Contact() {
           <span className="text-gray-500 leading-relaxed text-center sm:text-left">
             작게 만들고, 직접 써보고, 계속 고쳐갑니다.
           </span>
-          <span className="font-mono tracking-widest text-gray-700 whitespace-nowrap">
+          <span className="font-mono tracking-widest text-gray-600 whitespace-nowrap">
             © {new Date().getFullYear()} DRAMATIC LIFE · {meta.social.handle}
           </span>
         </div>

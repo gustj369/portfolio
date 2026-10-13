@@ -89,7 +89,7 @@ function ProjectCard({ project }) {
       {/* Sublabel — 한 줄 소개 */}
       {sublabel && (
         <p className={`text-xs leading-relaxed -mt-1 ${
-          isSlate ? "text-gray-600" : isViolet ? "text-violet-400/60" : "text-gold-500/60"
+          isSlate ? "text-gray-600" : isViolet ? "text-violet-400/80" : "text-gold-500/80"
         }`}>
           {sublabel}
         </p>
@@ -104,7 +104,7 @@ function ProjectCard({ project }) {
       {keyBuild && (
         <p className={`text-[10px] font-mono leading-relaxed border-t pt-2 -mt-0.5 ${
           isSlate
-            ? "text-gray-700 border-dark-600/25"
+            ? "text-gray-600 border-dark-600/25"
             : "text-gray-600 border-dark-600/50"
         }`}>
           {keyBuild}

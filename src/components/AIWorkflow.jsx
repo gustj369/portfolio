@@ -33,7 +33,7 @@ export default function AIWorkflow() {
                   <span key={step} className="inline-flex items-center gap-2">
                     <span className="text-xs font-mono text-gray-500">{step}</span>
                     {i < flowSteps.length - 1 && (
-                      <span className="text-gold-500/50 text-xs">→</span>
+                      <span aria-hidden="true" className="text-gold-500/50 text-xs">→</span>
                     )}
                   </span>
                 ))}
@@ -42,7 +42,7 @@ export default function AIWorkflow() {
 
             {/* Tools row */}
             <div>
-              <span className="block text-xs font-mono text-gray-700 tracking-widest mb-3">
+              <span className="block text-xs font-mono text-gray-600 tracking-widest mb-3">
                 TOOLS USED
               </span>
               <div className="grid sm:grid-cols-2 gap-2.5">
@@ -54,7 +54,7 @@ export default function AIWorkflow() {
                     <p className="text-xs font-mono text-gray-400 leading-none mb-1">
                       {tool.name}
                     </p>
-                    <p className="text-[10px] text-gray-700 leading-none whitespace-nowrap">
+                    <p className="text-[10px] text-gray-600 leading-none whitespace-nowrap">
                       {tool.role}
                     </p>
                   </div>
@@ -94,7 +94,7 @@ export default function AIWorkflow() {
 
         {/* Result projects row */}
         <div className="flex items-center gap-3 mt-7 md:mt-8 flex-wrap">
-          <span className="text-xs font-mono text-gray-700 tracking-widest">
+          <span className="text-xs font-mono text-gray-600 tracking-widest">
             이 흐름으로 만든 결과물들
           </span>
           <div className="w-3 h-px bg-dark-500/60 hidden sm:block" />
