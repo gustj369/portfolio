@@ -31,8 +31,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        mono: ["JetBrains Mono", "Fira Code", "monospace"],
+        sans: ["Inter", "Pretendard Variable", "Pretendard", "system-ui", "sans-serif"],
+        mono: ["JetBrains Mono", "Fira Code", "Pretendard Variable", "Pretendard", "monospace"],
       },
       animation: {
         "fade-in": "fadeIn 0.6s ease-out",
