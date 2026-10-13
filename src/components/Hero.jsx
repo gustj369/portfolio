@@ -7,7 +7,7 @@ export default function Hero({ months }) {
   const statCards = [
     { value: `${months} MONTHS`,           label: "퇴근 후 쌓은 기록",        mobileLabel: "퇴근 후 기록", mono: true  },
     { value: `${visibleProjectCount} PROJECTS`, label: "직접 만들고 개선한 결과물", mobileLabel: "결과물",       mono: true  },
-    { value: "AI WORKFLOW",                label: "ChatGPT · Codex · GitHub", mobileLabel: "도구·방식",   mono: false },
+    { value: "AI WORKFLOW",                label: "Claude · ChatGPT · GitHub", mobileLabel: "도구·방식",   mono: false },
   ];
 
   return (

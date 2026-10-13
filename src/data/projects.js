@@ -137,8 +137,8 @@ export const techStack = [
   {
     category: "AI WORKFLOW",
     description: "아이디어 정리, 코드 작성, 콘텐츠 제작에 AI를 작업 흐름으로 연결합니다.",
-    items: ["ChatGPT", "Codex", "GitHub", "Prompt Design"],
-    highlight: ["ChatGPT", "Codex", "GitHub"],
+    items: ["Claude", "ChatGPT", "GitHub", "Prompt Design"],
+    highlight: ["Claude", "ChatGPT", "GitHub"],
     color: "violet",
   },
   {
@@ -163,7 +163,7 @@ export const writingTopics = [
   {
     icon: "◎",
     title: "AI 활용 기록",
-    description: "ChatGPT, Codex 같은 AI 도구를 일상과 작업 흐름에 어떻게 연결하는지 기록합니다.",
+    description: "Claude, ChatGPT 같은 AI 도구를 일상과 작업 흐름에 어떻게 연결하는지 기록합니다.",
     tags: ["AI Tools", "Workflow"],
     accent: "violet",
   },
@@ -210,7 +210,7 @@ export const workflowSteps = [
     step: "02",
     title: "구조 설계",
     description:
-      "구조 없이 만들다가 절반에서 다시 짠 적이 있어요.\n지금은 Codex와 함께 초기 구조를 먼저 잡습니다.",
+      "구조 없이 만들다가 절반에서 다시 짠 적이 있어요.\n지금은 Claude와 함께 초기 구조를 먼저 잡습니다.",
   },
   {
     step: "03",
@@ -243,8 +243,8 @@ export const flowSteps = ["생각", "구조", "구현", "검증", "기록", "공
 // AIWorkflow 섹션 전용 도구 목록
 // techStack의 AI WORKFLOW 항목과 별개 — 도구별 역할 설명(role)이 추가된 구조
 export const workflowTools = [
-  { name: "Claude", role: "코드 구조 · 구현 보조" },
-  { name: "Codex",  role: "코드 구조 · 구현 보조" },
+  { name: "Claude",  role: "코드 구조 · 구현 · 검증" },
+  { name: "ChatGPT", role: "아이디어 정리 · 글 다듬기" },
 ];
 
 
