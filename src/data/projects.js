@@ -204,6 +204,17 @@ export const writingTopics = [
   },
 ];
 
+// Writing 섹션 대표 글 — 주제 카드 아래에 강조 카드로 표시
+export const featuredPost = {
+  platform: "Threads",
+  date: "2026.09.12",
+  title: "무던한 하루가 제일 좋다",
+  excerpt:
+    "아침엔 커피 마시며 일하고, 강아지와 산책하고, 저녁엔 맥주 한잔에 영화 보는 것. 그런 무던한 하루가 제일 좋았다고요.",
+  stat: "조회 10만+",
+  href: "https://www.threads.com/@94hyeonseo/post/DdKkyRLE47w",
+};
+
 // AI Workflow section data
 export const workflowSteps = [
   {

@@ -1,5 +1,36 @@
-import { writingTopics, formatWritingDuration, meta } from "../data/projects";
-import { InstagramIcon, ThreadsIcon } from "./icons";
+import { writingTopics, formatWritingDuration, meta, featuredPost } from "../data/projects";
+import { ArrowRightIcon, InstagramIcon, ThreadsIcon } from "./icons";
+
+function FeaturedPost({ post }) {
+  return (
+    <a
+      href={post.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={`대표 글 읽기: ${post.title} (${post.platform})`}
+      className="group block rounded-xl p-5 md:p-6 border border-gold-500/30 bg-dark-800/60 hover:border-gold-500/50 hover:shadow-[0_0_24px_rgba(212,168,67,0.07)] transition-all duration-300 md:hover:-translate-y-0.5"
+    >
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-3">
+        <span className="text-xs font-mono text-gold-500 tracking-widest">
+          FEATURED POST
+        </span>
+        <span className="text-xs font-mono text-gray-600">
+          {post.platform} · {post.date} · {post.stat}
+        </span>
+      </div>
+      <h3 className="text-base md:text-lg font-semibold text-gray-100 group-hover:text-gold-400 transition-colors duration-200 mb-2">
+        {post.title}
+      </h3>
+      <p className="text-sm text-gray-400 leading-relaxed max-w-2xl mb-4">
+        “{post.excerpt}”
+      </p>
+      <span className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-300 group-hover:text-gold-400 transition-colors duration-200">
+        {post.platform}에서 읽기
+        <ArrowRightIcon className="w-3 h-3" />
+      </span>
+    </a>
+  );
+}
 
 function WritingCard({ topic }) {
   const isGold   = topic.accent === "gold";
@@ -101,11 +132,17 @@ export default function Writing({ months }) {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12 md:mb-14">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-4 md:mb-5">
           {[featuredTopic, ...restTopics].filter(Boolean).map((topic) => (
             <WritingCard key={topic.title} topic={topic} />
           ))}
         </div>
+
+        {featuredPost && (
+          <div className="mb-12 md:mb-14">
+            <FeaturedPost post={featuredPost} />
+          </div>
+        )}
 
         {/* Bottom CTA */}
         <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-5 md:gap-6 pt-7 md:pt-8 border-t border-dark-600/40">
